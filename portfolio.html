@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -47,7 +46,9 @@ a{
 }
 
 
-/* NAV */
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
 nav{
     position:fixed;
@@ -112,10 +113,19 @@ nav{
 
     font-size:12px;
     font-weight:800;
+
+    transition:.25s;
+}
+
+.back:hover{
+    background:var(--wine);
+    transform:translateY(-2px);
 }
 
 
-/* HERO */
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
     min-height:100vh;
@@ -167,7 +177,6 @@ nav{
 
 .hero-logo img{
     width:100%;
-
     border-radius:50%;
 }
 
@@ -222,7 +231,9 @@ h1{
 }
 
 
-/* STATS */
+/* =====================================================
+   STATS
+===================================================== */
 
 .stats{
     padding:30px 8% 110px;
@@ -274,24 +285,23 @@ h1{
 
 .stat strong{
     font-size:39px;
-
     letter-spacing:-2px;
 }
 
 .stat span{
     font-size:10px;
-
     font-weight:850;
 
     letter-spacing:1.5px;
-
     text-transform:uppercase;
 
     opacity:.7;
 }
 
 
-/* SECTIONS */
+/* =====================================================
+   COMMON SECTIONS
+===================================================== */
 
 .section{
     padding:120px 8%;
@@ -328,7 +338,9 @@ h1{
 }
 
 
-/* OVERVIEW */
+/* =====================================================
+   OVERVIEW
+===================================================== */
 
 .overview{
     background:var(--green);
@@ -394,7 +406,9 @@ h1{
 }
 
 
-/* ENGINEERING */
+/* =====================================================
+   ENGINEERING
+===================================================== */
 
 .engineering{
     background:#FFF7EC;
@@ -473,7 +487,9 @@ h1{
 }
 
 
-/* INTAKE */
+/* =====================================================
+   TESTING
+===================================================== */
 
 .data{
     background:var(--pink2);
@@ -524,7 +540,9 @@ h1{
 }
 
 
-/* OUTREACH */
+/* =====================================================
+   OUTREACH
+===================================================== */
 
 .outreach{
     background:var(--wine);
@@ -588,7 +606,9 @@ h1{
 }
 
 
-/* LESSONS */
+/* =====================================================
+   LESSONS
+===================================================== */
 
 .lessons{
     background:var(--cream);
@@ -633,26 +653,46 @@ h1{
 }
 
 
-/* PDF */
+/* =====================================================
+   FULL PDF PORTFOLIO
+===================================================== */
 
 .pdf{
-    padding:120px 8%;
+    padding:130px 5%;
 
-    text-align:center;
-
-    background:var(--pink);
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(255,247,230,.65),
+            transparent 32%
+        ),
+        var(--pink);
 }
 
 .pdf-inner{
-    max-width:800px;
+    width:100%;
+
+    max-width:1300px;
 
     margin:auto;
 }
 
-.pdf h2{
-    font-size:clamp(50px,8vw,100px);
+.pdf-top{
+    text-align:center;
 
-    line-height:.9;
+    margin-bottom:50px;
+}
+
+.pdf-top .label{
+    color:var(--wine);
+}
+
+.pdf h2{
+    margin-top:18px;
+
+    font-size:clamp(55px,8vw,105px);
+
+    line-height:.88;
 
     letter-spacing:-6px;
 
@@ -660,17 +700,120 @@ h1{
 }
 
 .pdf p{
-    max-width:600px;
+    max-width:680px;
 
-    margin:30px auto;
+    margin:30px auto 0;
 
-    line-height:1.7;
+    line-height:1.75;
 
     color:var(--olive);
+
+    font-size:17px;
+}
+
+
+/* PDF WINDOW */
+
+.pdf-viewer{
+    position:relative;
+
+    margin-top:55px;
+
+    padding:12px;
+
+    background:rgba(255,247,230,.85);
+
+    border:1px solid rgba(84,2,9,.12);
+
+    border-radius:34px;
+
+    box-shadow:
+        0 35px 90px rgba(84,2,9,.15);
+
+    overflow:hidden;
+}
+
+.pdf-bar{
+    height:55px;
+
+    padding:0 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    color:var(--wine);
+
+    font-size:11px;
+    font-weight:850;
+
+    letter-spacing:1px;
+}
+
+.pdf-dots{
+    display:flex;
+    gap:6px;
+}
+
+.pdf-dots span{
+    display:block;
+
+    width:9px;
+    height:9px;
+
+    border-radius:50%;
+
+    background:var(--dusty);
+}
+
+.pdf-dots span:nth-child(2){
+    background:var(--pink);
+}
+
+.pdf-dots span:nth-child(3){
+    background:var(--green);
+}
+
+.pdf-viewer iframe{
+    display:block;
+
+    width:100%;
+
+    height:85vh;
+
+    min-height:760px;
+
+    border:0;
+
+    border-radius:24px;
+
+    background:white;
+}
+
+
+/* PDF BUTTONS */
+
+.pdf-actions{
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    margin-top:30px;
 }
 
 .pdf-btn{
-    display:inline-block;
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-width:190px;
 
     padding:16px 25px;
 
@@ -680,20 +823,49 @@ h1{
 
     text-decoration:none;
 
+    border:1px solid var(--wine);
+
     border-radius:100px;
 
-    font-size:12px;
+    font-size:11px;
 
     font-weight:850;
+
+    letter-spacing:.5px;
+
+    transition:.25s;
+}
+
+.pdf-btn:hover{
+    background:var(--green);
+
+    border-color:var(--green);
+
+    transform:translateY(-2px);
+}
+
+.pdf-btn.secondary{
+    background:transparent;
+
+    color:var(--wine);
+}
+
+.pdf-btn.secondary:hover{
+    background:var(--wine);
+
+    color:white;
 }
 
 
-/* FOOTER */
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer{
     padding:30px 8%;
 
     background:#2A1616;
+
     color:var(--pink);
 
     display:flex;
@@ -708,7 +880,9 @@ footer{
 }
 
 
-/* MOBILE */
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:850px){
 
@@ -740,15 +914,79 @@ footer{
     footer{
         flex-direction:column;
     }
+
+    .pdf{
+        padding:90px 15px;
+    }
+
+    .pdf h2{
+        letter-spacing:-4px;
+    }
+
+    .pdf-viewer{
+        padding:7px;
+
+        border-radius:23px;
+    }
+
+    .pdf-viewer iframe{
+        height:75vh;
+
+        min-height:600px;
+
+        border-radius:17px;
+    }
+}
+
+@media(max-width:520px){
+
+    nav{
+        top:10px;
+
+        width:calc(100% - 20px);
+    }
+
+    .brand img{
+        width:38px;
+        height:38px;
+    }
+
+    .back{
+        padding:10px 14px;
+
+        font-size:10px;
+    }
+
+    .hero{
+        padding-left:6%;
+        padding-right:6%;
+    }
+
+    h1{
+        font-size:70px;
+    }
+
+    .stats,
+    .section{
+        padding-left:6%;
+        padding-right:6%;
+    }
+
+    .pdf-viewer iframe{
+        min-height:520px;
+    }
 }
 
 </style>
-
 </head>
 
 
 <body>
 
+
+<!-- =====================================================
+     NAV
+===================================================== -->
 
 <nav>
 
@@ -756,23 +994,30 @@ footer{
 
         <img
             src="bilbarbie-logo.jpeg"
-            alt="BIL Barbie">
+            alt="BIL Barbie logo">
 
         BIL <span>BARBIE</span>
 
     </a>
 
 
-    <a href="index.html#portfolio" class="back">
+    <a
+        href="index.html#portfolio"
+        class="back">
+
         ← Back to site
+
     </a>
 
 </nav>
 
 
 
-<header class="hero">
+<!-- =====================================================
+     HERO
+===================================================== -->
 
+<header class="hero">
 
     <div class="hero-logo">
 
@@ -785,18 +1030,15 @@ footer{
 
     <div class="hero-inner">
 
-
         <div class="label">
             FTC #25272 / ENGINEERING PORTFOLIO
         </div>
 
 
         <h1>
-
             Think.<br>
             Design.<br>
             Build.
-
         </h1>
 
 
@@ -813,14 +1055,15 @@ footer{
 
         </p>
 
-
     </div>
 
 </header>
 
 
 
-<!-- STATS -->
+<!-- =====================================================
+     STATS
+===================================================== -->
 
 <section class="stats">
 
@@ -831,7 +1074,9 @@ footer{
 
         <strong>920+</strong>
 
-        <span>Engineering hours</span>
+        <span>
+            Engineering hours
+        </span>
 
     </div>
 
@@ -840,7 +1085,9 @@ footer{
 
         <strong>20+</strong>
 
-        <span>Design iterations</span>
+        <span>
+            Design iterations
+        </span>
 
     </div>
 
@@ -849,7 +1096,9 @@ footer{
 
         <strong>200+</strong>
 
-        <span>Students reached</span>
+        <span>
+            Students reached
+        </span>
 
     </div>
 
@@ -858,7 +1107,9 @@ footer{
 
         <strong>15+</strong>
 
-        <span>FTC collaborations</span>
+        <span>
+            FTC collaborations
+        </span>
 
     </div>
 
@@ -869,7 +1120,9 @@ footer{
 
 
 
-<!-- TEAM OVERVIEW -->
+<!-- =====================================================
+     TEAM OVERVIEW
+===================================================== -->
 
 <section class="section overview">
 
@@ -908,9 +1161,13 @@ footer{
 
         <div class="overview-card">
 
-            <span>CONNECT</span>
+            <span>
+                CONNECT
+            </span>
 
-            <h3>Professional Community</h3>
+            <h3>
+                Professional Community
+            </h3>
 
             <p>
 
@@ -928,9 +1185,13 @@ footer{
 
         <div class="overview-card">
 
-            <span>DESIGN</span>
+            <span>
+                DESIGN
+            </span>
 
-            <h3>Functionality & Aesthetics</h3>
+            <h3>
+                Functionality & Aesthetics
+            </h3>
 
             <p>
 
@@ -947,9 +1208,13 @@ footer{
 
         <div class="overview-card">
 
-            <span>THINK</span>
+            <span>
+                THINK
+            </span>
 
-            <h3>Engineering Process</h3>
+            <h3>
+                Engineering Process
+            </h3>
 
             <p>
 
@@ -966,9 +1231,13 @@ footer{
 
         <div class="overview-card">
 
-            <span>REACH</span>
+            <span>
+                REACH
+            </span>
 
-            <h3>STEM Advocacy</h3>
+            <h3>
+                STEM Advocacy
+            </h3>
 
             <p>
 
@@ -990,7 +1259,9 @@ footer{
 
 
 
-<!-- ENGINEERING -->
+<!-- =====================================================
+     ENGINEERING
+===================================================== -->
 
 <section class="section engineering">
 
@@ -1140,7 +1411,9 @@ footer{
 
 
 
-<!-- DATA / INTAKE -->
+<!-- =====================================================
+     TESTING
+===================================================== -->
 
 <section class="section data">
 
@@ -1160,21 +1433,26 @@ footer{
     </h2>
 
 
+
     <div class="data-grid">
 
 
         <div class="data-box">
 
-            <h3>Intake development</h3>
+            <h3>
+                Intake development
+            </h3>
 
             <div class="big-data">
                 85%
             </div>
 
             <p>
+
                 The final intake design reached
                 an 85% success rate after multiple
                 prototype iterations.
+
             </p>
 
         </div>
@@ -1183,16 +1461,20 @@ footer{
 
         <div class="data-box">
 
-            <h3>Escape reduction</h3>
+            <h3>
+                Escape reduction
+            </h3>
 
             <div class="big-data">
                 50%
             </div>
 
             <p>
+
                 Changes to intake geometry,
                 guide panels and compliant wheels
                 reduced the escape rate by 50%.
+
             </p>
 
         </div>
@@ -1207,7 +1489,9 @@ footer{
 
 
 
-<!-- OUTREACH -->
+<!-- =====================================================
+     OUTREACH
+===================================================== -->
 
 <section class="section outreach">
 
@@ -1242,9 +1526,13 @@ footer{
 
         <div class="outreach-card">
 
-            <strong>200+</strong>
+            <strong>
+                200+
+            </strong>
 
-            <h3>Students reached</h3>
+            <h3>
+                Students reached
+            </h3>
 
             <p>
 
@@ -1260,9 +1548,13 @@ footer{
 
         <div class="outreach-card">
 
-            <strong>15+</strong>
+            <strong>
+                15+
+            </strong>
 
-            <h3>FTC teams</h3>
+            <h3>
+                FTC teams
+            </h3>
 
             <p>
 
@@ -1279,9 +1571,13 @@ footer{
 
         <div class="outreach-card">
 
-            <strong>2</strong>
+            <strong>
+                2
+            </strong>
 
-            <h3>New teams launched</h3>
+            <h3>
+                New teams launched
+            </h3>
 
             <p>
 
@@ -1303,7 +1599,9 @@ footer{
 
 
 
-<!-- LESSONS -->
+<!-- =====================================================
+     LESSONS
+===================================================== -->
 
 <section class="section lessons">
 
@@ -1343,7 +1641,9 @@ footer{
 
         <div class="lesson">
 
-            <span>01</span>
+            <span>
+                01
+            </span>
 
             <h3>
                 Accurate measurements matter.
@@ -1354,7 +1654,9 @@ footer{
 
         <div class="lesson">
 
-            <span>02</span>
+            <span>
+                02
+            </span>
 
             <h3>
                 Reliability over complexity.
@@ -1365,7 +1667,9 @@ footer{
 
         <div class="lesson">
 
-            <span>03</span>
+            <span>
+                03
+            </span>
 
             <h3>
                 Testing drives improvement.
@@ -1383,42 +1687,113 @@ footer{
 
 
 
-<!-- ORIGINAL PDF -->
+<!-- =====================================================
+     FULL ENGINEERING PORTFOLIO PDF
+===================================================== -->
 
-<section class="pdf">
+<section class="pdf" id="full-portfolio">
 
 <div class="pdf-inner">
 
 
-    <h2>
-        Want the<br>
-        full portfolio?
-    </h2>
+    <div class="pdf-top">
 
 
-    <p>
-
-        This web page presents the main
-        engineering story of BIL Barbie.
-
-        The original portfolio contains
-        the complete documentation,
-        detailed development process
-        and additional team material.
-
-    </p>
+        <div class="label">
+            06 / FULL ENGINEERING PORTFOLIO
+        </div>
 
 
-    <a
-        href="./portfolio.pdf"
-        127.0.0.1:5500/portfolio.pdf
-        target="_blank"
-        rel="noopener noreferrer"
-        class="pdf-btn">
+        <h2>
 
-        OPEN ORIGINAL PDF ↗
+            The full<br>
+            story.
 
-    </a>
+        </h2>
+
+
+        <p>
+
+            Explore the complete BIL Barbie Engineering Portfolio.
+
+            Our full documentation includes robot development,
+            CAD, programming, prototypes, testing,
+            engineering decisions, outreach
+            and everything we learned throughout the season.
+
+        </p>
+
+
+    </div>
+
+
+
+    <!-- =========================================
+         PDF ОТКРЫВАЕТСЯ ПРЯМО НА СТРАНИЦЕ
+    ========================================== -->
+
+    <div class="pdf-viewer">
+
+
+        <div class="pdf-bar">
+
+
+            <div class="pdf-dots">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+
+            <div>
+                BIL BARBIE · ENGINEERING PORTFOLIO
+            </div>
+
+
+        </div>
+
+
+        <iframe
+            src="portfolio.pdf#view=FitH"
+            title="BIL Barbie Engineering Portfolio">
+
+        </iframe>
+
+
+    </div>
+
+
+
+    <!-- =========================================
+         КНОПКИ ПОД PDF
+    ========================================== -->
+
+    <div class="pdf-actions">
+
+
+        <a
+            href="portfolio.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="pdf-btn">
+
+            OPEN FULL SCREEN ↗
+
+        </a>
+
+
+        <a
+            href="#full-portfolio"
+            class="pdf-btn secondary">
+
+            BACK TO PORTFOLIO ↑
+
+        </a>
+
+
+    </div>
 
 
 </div>
@@ -1427,19 +1802,27 @@ footer{
 
 
 
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
+
 
     <span>
         © 2026 BIL BARBIE
     </span>
 
+
     <span>
         FTC #25272 · ALMATY
     </span>
 
+
     <span>
         ENGINEERED WITH PERSONALITY.
     </span>
+
 
 </footer>
 

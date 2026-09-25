@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>BIL Barbie | BIOBUZZ Manual RU</title>
+<title>BIOBUZZ Manual | BIL Barbie</title>
 
 <style>
+/* =========================================================
+   BIL BARBIE — BIOBUZZ MANUAL
+   ========================================================= */
 
 :root{
     --cream:#FFF7E6;
+    --cream2:#FFF1CF;
     --pink:#EFBFC2;
-    --pink2:#F4C9D6;
+    --pink-light:#F4C9D6;
     --dusty:#D5999D;
     --wine:#540209;
-    --red:#8B0000;
+    --wine2:#74070E;
+    --red:#961111;
     --green:#132A13;
+    --green2:#1D4214;
     --olive:#45462A;
+    --white:#FFF7EC;
+    --black:#151515;
 }
 
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 html{
@@ -32,635 +37,1407 @@ html{
 }
 
 body{
-    font-family:-apple-system,BlinkMacSystemFont,
-    "Segoe UI",Arial,sans-serif;
+    font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
 
     background:var(--cream);
     color:var(--green);
+    line-height:1.7;
+    overflow-x:hidden;
 }
 
-/* NAV */
+/* ================= NAV ================= */
 
-nav{
-    position:sticky;
-    top:15px;
-    z-index:100;
+.top{
+    position:fixed;
+    top:14px;
+    left:2%;
+    right:2%;
+    height:66px;
 
-    width:calc(100% - 30px);
-    max-width:1200px;
-
-    margin:15px auto;
-
-    padding:10px 14px;
+    z-index:1000;
 
     display:flex;
     align-items:center;
     justify-content:space-between;
 
-    background:rgba(255,247,230,.9);
+    padding:0 22px;
 
-    backdrop-filter:blur(20px);
+    background:rgba(255,247,230,.88);
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
 
-    border:1px solid rgba(84,2,9,.1);
-    border-radius:100px;
+    border:1px solid rgba(84,2,9,.12);
+    border-radius:40px;
+
+    box-shadow:
+        0 8px 30px rgba(84,2,9,.05);
 }
 
 .brand{
-    display:flex;
-    align-items:center;
-    gap:10px;
-
     text-decoration:none;
     color:var(--green);
 
-    font-weight:850;
+    font-size:15px;
+    font-weight:950;
+    letter-spacing:-.4px;
 }
 
-.brand img{
-    width:45px;
-    height:45px;
-
-    object-fit:cover;
-    border-radius:50%;
+.brand span{
+    color:var(--dusty);
 }
 
 .back{
-    padding:12px 18px;
+    text-decoration:none;
 
+    color:white;
     background:var(--green);
+
+    padding:11px 18px;
+
+    border-radius:100px;
+
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:.8px;
+
+    transition:.25s ease;
+}
+
+.back:hover{
+    background:var(--wine);
+    transform:translateY(-2px);
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:94vh;
+
+    position:relative;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:
+        150px
+        clamp(25px,7vw,120px)
+        100px;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 55%,
+            rgba(255,247,230,.65) 0%,
+            rgba(239,191,194,.65) 30%,
+            rgba(244,201,214,.95) 70%
+        );
+}
+
+/* большая B на фоне */
+
+.hero::before{
+    content:"B";
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-47%);
+
+    font-family:Georgia,serif;
+    font-style:italic;
+
+    font-size:min(72vw,850px);
+    line-height:1;
+
+    color:rgba(84,2,9,.035);
+
+    pointer-events:none;
+}
+
+/* маленькое свечение */
+
+.hero::after{
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    right:-170px;
+    top:-150px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,247,230,.75),
+            transparent 65%
+        );
+
+    pointer-events:none;
+}
+
+.eyebrow{
+    position:relative;
+    z-index:2;
+
+    margin-bottom:22px;
+
+    color:var(--wine);
+
+    font-size:11px;
+    font-weight:950;
+
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.hero h1{
+    position:relative;
+    z-index:2;
+
+    max-width:1200px;
+
+    color:var(--wine);
+
+    font-size:
+        clamp(65px,11vw,155px);
+
+    line-height:.82;
+
+    letter-spacing:
+        clamp(-7px,-.6vw,-3px);
+
+    font-weight:950;
+}
+
+.hero p{
+    position:relative;
+    z-index:2;
+
+    max-width:720px;
+
+    margin-top:40px;
+
+    color:#5b2b2d;
+
+    font-size:
+        clamp(15px,1.4vw,19px);
+
+    line-height:1.8;
+}
+
+.language{
+    position:relative;
+    z-index:2;
+
+    display:inline-flex;
+    align-items:center;
+
+    margin-top:35px;
+
+    padding:12px 20px;
+
+    background:var(--wine);
     color:white;
 
     border-radius:100px;
 
-    text-decoration:none;
-
-    font-size:12px;
-    font-weight:800;
-}
-
-/* HERO */
-
-.hero{
-    max-width:1200px;
-
-    margin:auto;
-
-    padding:100px 7% 80px;
-}
-
-.label{
-    font-size:11px;
-    font-weight:850;
+    font-size:10px;
+    font-weight:950;
 
     letter-spacing:2px;
-
-    color:var(--dusty);
-
-    text-transform:uppercase;
 }
 
-h1{
-    margin-top:25px;
 
-    max-width:950px;
+/* ================= PAGE ================= */
 
-    font-size:clamp(60px,10vw,135px);
-
-    line-height:.85;
-
-    letter-spacing:-7px;
-
-    color:var(--wine);
-}
-
-.intro{
-    margin-top:40px;
-
-    max-width:700px;
-
-    font-size:18px;
-    line-height:1.7;
-
-    color:var(--olive);
-}
-
-/* CONTENT */
-
-.manual-layout{
-    max-width:1200px;
+.layout{
+    width:min(1450px,94%);
 
     margin:auto;
 
-    padding:20px 7% 120px;
+    padding:100px 0 130px;
 
     display:grid;
 
-    grid-template-columns:270px 1fr;
+    grid-template-columns:
+        270px
+        minmax(0,930px);
+
+    justify-content:center;
 
     gap:70px;
 }
 
-/* SIDE MENU */
 
-.contents{
+/* ================= TABLE OF CONTENTS ================= */
+
+.toc{
     position:sticky;
-    top:100px;
+
+    top:105px;
 
     align-self:start;
 
-    padding:25px;
+    max-height:
+        calc(100vh - 125px);
 
-    background:var(--pink2);
+    overflow:auto;
 
-    border-radius:25px;
+    padding:26px;
+
+    background:
+        rgba(255,255,255,.63);
+
+    backdrop-filter:blur(18px);
+
+    border:
+        1px solid rgba(84,2,9,.08);
+
+    border-radius:28px;
+
+    box-shadow:
+        0 15px 45px rgba(84,2,9,.05);
 }
 
-.contents-title{
-    margin-bottom:20px;
+.toc::-webkit-scrollbar{
+    width:4px;
+}
 
-    font-size:11px;
-    font-weight:900;
+.toc::-webkit-scrollbar-thumb{
+    background:var(--dusty);
+    border-radius:20px;
+}
+
+.toc h3{
+    color:var(--wine);
+
+    font-size:12px;
+    font-weight:950;
 
     letter-spacing:2px;
-
     text-transform:uppercase;
 
-    color:var(--wine);
+    margin-bottom:18px;
 }
 
-.contents a{
+.toc a{
     display:block;
 
-    padding:9px 0;
+    padding:10px 4px;
+
+    color:#5e5e50;
 
     text-decoration:none;
 
-    color:var(--olive);
-
     font-size:12px;
-    font-weight:700;
+    font-weight:650;
+
+    border-bottom:
+        1px solid rgba(84,2,9,.07);
+
+    transition:.2s;
 }
 
-.contents a:hover{
+.toc a:hover{
     color:var(--wine);
+    padding-left:10px;
 }
 
-/* CHAPTERS */
+
+/* ================= CHAPTER ================= */
 
 .chapter{
-    padding:55px 0;
+    position:relative;
 
-    border-bottom:1px solid rgba(84,2,9,.13);
+    scroll-margin-top:110px;
+
+    margin-bottom:125px;
 }
 
 .number{
-    margin-bottom:12px;
+    display:inline-flex;
 
-    color:var(--dusty);
+    margin-bottom:15px;
 
-    font-size:11px;
+    padding:7px 12px;
 
-    font-weight:900;
+    color:var(--wine);
+
+    background:var(--pink-light);
+
+    border-radius:100px;
+
+    font-size:9px;
+    font-weight:950;
+
+    letter-spacing:2.2px;
+    text-transform:uppercase;
+}
+
+.chapter h2{
+    max-width:850px;
+
+    color:var(--wine);
+
+    font-size:
+        clamp(48px,7vw,88px);
+
+    line-height:.93;
+
+    letter-spacing:-5px;
+
+    font-weight:950;
+
+    margin-bottom:35px;
+}
+
+.chapter h3{
+    margin:
+        48px 0
+        14px;
+
+    color:var(--green);
+
+    font-size:
+        clamp(24px,3vw,34px);
+
+    line-height:1.1;
+
+    letter-spacing:-1.5px;
+}
+
+.chapter h4{
+    margin:
+        30px 0
+        8px;
+
+    color:var(--wine);
+
+    font-size:18px;
+}
+
+.chapter p{
+    max-width:850px;
+
+    margin:14px 0;
+
+    color:#45483e;
+
+    font-size:
+        clamp(15px,1.25vw,17px);
+
+    line-height:1.85;
+}
+
+.chapter strong{
+    color:var(--wine);
+}
+
+.chapter ul{
+    margin:
+        18px 0
+        25px 25px;
+
+    max-width:820px;
+}
+
+.chapter li{
+    padding-left:7px;
+
+    margin-bottom:10px;
+
+    color:#45483e;
+}
+
+
+/* ================= BIG INTRO FOR CHAPTER ================= */
+
+.chapter > p:first-of-type{
+    font-size:
+        clamp(17px,1.6vw,21px);
+
+    line-height:1.75;
+
+    color:#35382f;
+}
+
+
+/* ================= RULE ================= */
+
+.rule{
+    position:relative;
+
+    margin:28px 0;
+
+    padding:
+        28px 30px
+        28px 35px;
+
+    background:var(--wine);
+
+    color:var(--cream);
+
+    border-radius:25px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(84,2,9,.12);
+}
+
+.rule::before{
+    content:"RULE";
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:var(--pink);
+
+    font-size:9px;
+    font-weight:950;
 
     letter-spacing:2px;
 }
 
-.chapter h2{
-    margin-bottom:25px;
+.rule strong{
+    color:white;
+}
 
-    font-size:clamp(32px,5vw,60px);
+.rule p,
+.rule{
+    line-height:1.7;
+}
 
-    line-height:1;
 
-    letter-spacing:-3px;
+/* ================= NOTE ================= */
+
+.note{
+    position:relative;
+
+    margin:28px 0;
+
+    padding:27px 30px;
+
+    background:var(--pink-light);
+
+    color:var(--wine);
+
+    border-radius:25px;
+
+    font-size:15px;
+
+    border:
+        1px solid rgba(84,2,9,.05);
+}
+
+.note::before{
+    content:"BIL BARBIE NOTE";
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-size:9px;
+    font-weight:950;
+
+    letter-spacing:2px;
 
     color:var(--wine);
 }
 
-.chapter p{
-    margin-bottom:18px;
 
-    font-size:16px;
+/* ================= GRID ================= */
 
-    line-height:1.8;
+.grid{
+    display:grid;
 
-    color:var(--olive);
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:14px;
+
+    margin:28px 0;
 }
 
-.chapter ul{
-    margin:20px 0 20px 20px;
+.box{
+    min-height:145px;
+
+    padding:27px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+
+    background:white;
+
+    border:
+        1px solid rgba(84,2,9,.07);
+
+    border-radius:25px;
+
+    color:#53564d;
+
+    transition:.25s;
 }
 
-.chapter li{
-    margin:10px 0;
+.box:hover{
+    transform:translateY(-5px);
 
-    line-height:1.6;
-
-    color:var(--olive);
+    box-shadow:
+        0 15px 40px
+        rgba(84,2,9,.08);
 }
 
-/* DOWNLOAD */
+.box b{
+    display:block;
 
-.original{
-    margin-top:60px;
+    margin-bottom:8px;
 
-    padding:35px;
+    color:var(--wine);
+
+    font-size:23px;
+    line-height:1;
+}
+
+
+/* ================= TERMS ================= */
+
+.term{
+    display:inline-flex;
+
+    margin:
+        5px 4px
+        5px 0;
+
+    padding:
+        8px 13px;
+
+    color:white;
 
     background:var(--green);
 
+    border-radius:100px;
+
+    font-size:10px;
+    font-weight:850;
+
+    letter-spacing:.4px;
+}
+
+
+/* ================= CHAPTER COLOR CHANGES ================= */
+
+/* ARENA */
+
+#s9{
+    padding:
+        70px 55px;
+
+    margin-left:-55px;
+    margin-right:-55px;
+
+    background:var(--green);
+
+    border-radius:45px;
+}
+
+#s9 h2,
+#s9 h3,
+#s9 h4,
+#s9 strong{
     color:var(--cream);
-
-    border-radius:30px;
 }
 
-.original h3{
-    font-size:30px;
-    margin-bottom:15px;
+#s9 p,
+#s9 li{
+    color:rgba(255,247,230,.82);
 }
 
-.original p{
-    color:var(--pink);
+#s9 .number{
+    background:var(--pink);
 }
 
-.original a{
-    display:inline-block;
+#s9 .note{
+    background:var(--cream);
+}
 
-    margin-top:20px;
 
-    padding:14px 20px;
+/* GAME */
+
+#s10{
+    padding:
+        70px 55px;
+
+    margin-left:-55px;
+    margin-right:-55px;
 
     background:var(--pink);
 
-    color:var(--wine);
-
-    text-decoration:none;
-
-    border-radius:100px;
-
-    font-size:12px;
-
-    font-weight:850;
+    border-radius:45px;
 }
 
-footer{
-    padding:30px 7%;
+
+/* ROBOT */
+
+#s12{
+    padding:
+        70px 55px;
+
+    margin-left:-55px;
+    margin-right:-55px;
+
+    background:#fff;
+
+    border-radius:45px;
+
+    box-shadow:
+        0 25px 80px
+        rgba(84,2,9,.06);
+}
+
+
+/* GLOSSARY */
+
+#s16{
+    padding:
+        70px 55px;
+
+    margin-left:-55px;
+    margin-right:-55px;
 
     background:var(--wine);
+
+    border-radius:45px;
+}
+
+#s16 h2,
+#s16 h3{
+    color:var(--cream);
+}
+
+#s16 .number{
+    background:var(--pink);
+}
+
+#s16 .box{
+    background:
+        rgba(255,247,230,.96);
+}
+
+
+/* ================= DIVIDER ================= */
+
+.chapter:not(:last-child)::after{
+    content:"";
+
+    display:block;
+
+    width:100%;
+    height:1px;
+
+    margin-top:90px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(84,2,9,.2),
+            transparent
+        );
+}
+
+#s9::after,
+#s10::after,
+#s12::after{
+    display:none;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    position:relative;
+
+    padding:
+        80px 7%;
+
+    background:var(--green);
 
     color:var(--pink);
 
     text-align:center;
 
     font-size:10px;
+    font-weight:850;
 
     letter-spacing:2px;
 }
 
-@media(max-width:800px){
 
-    .manual-layout{
-        grid-template-columns:1fr;
+/* ================= MOBILE ================= */
+
+@media(max-width:950px){
+
+    .top{
+        left:10px;
+        right:10px;
+        top:10px;
     }
 
-    .contents{
+    .layout{
+        display:block;
+        width:90%;
+        padding-top:45px;
+    }
+
+    .toc{
         position:relative;
         top:0;
+
+        max-height:none;
+
+        margin-bottom:70px;
     }
 
-    h1{
-        letter-spacing:-4px;
+    .hero{
+        min-height:90vh;
+        padding-top:130px;
+    }
+
+    .hero h1{
+        letter-spacing:-5px;
+    }
+
+    #s9,
+    #s10,
+    #s12,
+    #s16{
+        margin-left:-15px;
+        margin-right:-15px;
+
+        padding:
+            50px 25px;
+
+        border-radius:30px;
     }
 }
 
+@media(max-width:600px){
+
+    .hero{
+        min-height:82vh;
+    }
+
+    .hero h1{
+        font-size:58px;
+        letter-spacing:-4px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .chapter{
+        margin-bottom:90px;
+    }
+
+    .chapter h2{
+        font-size:47px;
+        letter-spacing:-3px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .back{
+        padding:9px 13px;
+        font-size:9px;
+    }
+
+    .box{
+        min-height:125px;
+    }
+}
 </style>
-
 </head>
-
 
 <body>
 
-<nav>
-
-    <a class="brand" href="index.html">
-
-        <img
-            src="bilbarbie-logo.jpeg"
-            alt="BIL Barbie">
-
-        BIL BARBIE
-
-    </a>
-
-    <a class="back" href="index.html#manual">
-        ← Back
-    </a>
-
-</nav>
-
+<div class="top">
+ <a class="brand" href="index.html">BIL <span>BARBIE</span></a>
+ <a class="back" href="index.html#manual">← BACK TO SITE</a>
+</div>
 
 <header class="hero">
-
-    <div class="label">
-        BIL BARBIE / COMPETITION MANUAL
-    </div>
-
-    <h1>
-        BIOBUZZ<br>
-        2026–2027.
-    </h1>
-
-    <p class="intro">
-
-        Руководство по соревнованиям
-        FIRST Tech Challenge сезона
-        2026–2027 BIOBUZZ.
-
-        Здесь собрана структура официального
-        руководства: требования к участникам,
-        правила соревнований, арена,
-        правила игры, конструкция робота
-        и организация турнира.
-
-    </p>
-
+ <div class="eyebrow">FIRST Tech Challenge · 2026–2027</div>
+ <h1>BIOBUZZ<br>Competition Manual.</h1>
+ <p>
+   Веб-версия правил сезона BIOBUZZ для быстрого чтения командой.
+   Структура следует Competition Manual V1: от общих требований
+   до ARENA, GAME, ROBOT и TOURNAMENT.
+ </p>
+ <span class="language">РУССКИЙ</span>
 </header>
 
+<div class="layout">
 
-<main class="manual-layout">
-
-
-<aside class="contents">
-
-    <div class="contents-title">
-        Contents
-    </div>
-
-    <a href="#c1">01 — Введение</a>
-    <a href="#c2">02 — Обзор сезона FIRST</a>
-    <a href="#c3">03 — Допуск и инспекция</a>
-    <a href="#c4">04 — Следующий этап</a>
-    <a href="#c5">05 — Правила мероприятий</a>
-    <a href="#c6">06 — Награды</a>
-    <a href="#c8">08 — Обзор игры</a>
-    <a href="#c9">09 — Арена</a>
-    <a href="#c10">10 — Подробности игры</a>
-    <a href="#c11">11 — Правила игры</a>
-    <a href="#c12">12 — Конструкция робота</a>
-    <a href="#c13">13 — Турнир</a>
-    <a href="#c16">16 — Глоссарий</a>
-
+<aside class="toc">
+<h3>Содержание</h3>
+<a href="#s1">01 · Введение</a>
+<a href="#s2">02 · Сезон FIRST</a>
+<a href="#s3">03 · Допуск и инспекция</a>
+<a href="#s4">04 · Продвижение</a>
+<a href="#s5">05 · Мероприятие</a>
+<a href="#s6">06 · Награды</a>
+<a href="#s8">08 · BIOBUZZ</a>
+<a href="#s9">09 · ARENA</a>
+<a href="#s10">10 · MATCH</a>
+<a href="#s11">11 · Правила игры</a>
+<a href="#s12">12 · ROBOT</a>
+<a href="#s13">13 · Турнир</a>
+<a href="#s14">14 · Лиги</a>
+<a href="#s15">15 · FIRST Championship</a>
+<a href="#s16">16 · Глоссарий</a>
 </aside>
 
+<main>
 
+<section class="chapter" id="s1">
+<div class="number">01 / INTRODUCTION</div>
+<h2>Введение</h2>
+
+<p>
+Competition Manual определяет организацию сезона, требования к командам,
+игровому процессу, ROBOT, MATCH, мероприятиям, наградам и турнирам.
+При чтении важно учитывать не только отдельную фразу правила, но и его
+назначение и контекст.
+</p>
+
+<h3>FIRST Tech Challenge</h3>
+<p>
+FTC объединяет проектирование, программирование, изготовление,
+стратегию и командную работу. Команда должна не только построить ROBOT,
+но и пройти инспекцию, соблюдать требования мероприятия и безопасно
+участвовать в MATCH.
+</p>
+
+<div class="note">
+BIOBUZZ делает больший акцент на «духе правил» и предполагаемом
+игровом процессе. Поэтому стратегия, формально использующая
+непредусмотренную лазейку, не обязательно соответствует назначению правила.
+</div>
+
+<h3>Как читать обозначения</h3>
+<p>
+Буква в номере показывает категорию правила:
+</p>
 <div>
-
-
-<section class="chapter" id="c1">
-
-    <div class="number">01</div>
-
-    <h2>Введение</h2>
-
-    <p>
-        Руководство содержит правила
-        и требования соревнований
-        FIRST Tech Challenge сезона BIOBUZZ.
-    </p>
-
+<span class="term">I · Inspection</span>
+<span class="term">E · Event</span>
+<span class="term">A · Awards</span>
+<span class="term">G · Game</span>
+<span class="term">R · Robot</span>
+<span class="term">T · Tournament</span>
+<span class="term">L · League</span>
+<span class="term">C · Championship</span>
+</div>
 </section>
 
 
-<section class="chapter" id="c2">
+<section class="chapter" id="s2">
+<div class="number">02 / FIRST SEASON</div>
+<h2>Сезон FIRST</h2>
 
-    <div class="number">02</div>
+<p>
+Сезон включает проектирование ROBOT, подготовку команды,
+официальные мероприятия, инспекцию, квалификационные MATCH,
+playoff, награды и возможное продвижение команды на следующий уровень.
+</p>
 
-    <h2>Обзор сезона FIRST</h2>
-
-    <p>
-        Раздел посвящён структуре сезона,
-        участию команд и основным принципам
-        соревнований FIRST Tech Challenge.
-    </p>
-
+<div class="grid">
+<div class="box"><b>Build</b>Проектирование, CAD, изготовление и сборка.</div>
+<div class="box"><b>Code</b>Управление ROBOT, датчики, AUTO и TeleOp.</div>
+<div class="box"><b>Test</b>Проверка механизмов и повторяемости.</div>
+<div class="box"><b>Compete</b>Инспекция, MATCH, стратегия и взаимодействие ALLIANCE.</div>
+</div>
 </section>
 
 
-<section class="chapter" id="c3">
+<section class="chapter" id="s3">
+<div class="number">03 / ELIGIBILITY & INSPECTION</div>
+<h2>Допуск и инспекция</h2>
 
-    <div class="number">03</div>
+<h3>Допуск команды</h3>
+<p>
+Для официального участия команда должна соответствовать требованиям
+регистрации и мероприятия. Отдельно проверяется право на участие
+в MATCH и право претендовать на награды.
+</p>
 
-    <h2>
-        Допуск к соревнованиям
-        и инспекция
-    </h2>
+<h3>Инспекция ROBOT</h3>
+<p>
+Перед официальным участием ROBOT проходит проверку.
+Инспекция подтверждает соответствие конструкции, электроники,
+приводов, питания и других систем правилам ROBOT.
+</p>
 
-    <p>
-        Перед участием команда и робот
-        должны соответствовать требованиям
-        соревнований и пройти необходимые
-        процедуры допуска и инспекции.
-    </p>
-
+<div class="rule">
+<strong>Важно.</strong> Изменение ROBOT после инспекции не должно
+приводить его в состояние, которое нарушает требования Manual.
+</div>
 </section>
 
 
-<section class="chapter" id="c4">
+<section class="chapter" id="s4">
+<div class="number">04 / ADVANCEMENT</div>
+<h2>Продвижение</h2>
 
-    <div class="number">04</div>
+<p>
+Manual определяет порядок продвижения команд между уровнями
+соревнований и расчёт соответствующих показателей. На продвижение
+могут влиять результаты турнира, награды и структура конкретного региона.
+</p>
 
-    <h2>
-        Выход на следующий этап
-    </h2>
-
-    <p>
-        Раздел описывает правила,
-        связанные с продвижением команд
-        между этапами соревнований.
-    </p>
-
+<p>
+Команде следует отдельно проверять требования своего официального
+мероприятия, поскольку распределение мест между регионами зависит
+от структуры сезона.
+</p>
 </section>
 
 
-<section class="chapter" id="c5">
+<section class="chapter" id="s5">
+<div class="number">05 / EVENT RULES</div>
+<h2>Правила мероприятия</h2>
 
-    <div class="number">05</div>
+<h3>Безопасность</h3>
+<p>
+Команда отвечает за безопасную работу с ROBOT, инструментами,
+аккумуляторами, механизмами и оборудованием в pit-area и около FIELD.
+</p>
 
-    <h2>
-        Правила мероприятий
-    </h2>
+<h3>Беспроводная связь</h3>
+<p>
+Команды не должны создавать неразрешённые беспроводные сети или
+другие источники связи, способные влиять на официальную инфраструктуру
+мероприятия.
+</p>
 
-    <p>
-        В этой части руководства
-        определяются правила поведения
-        и организации команды
-        во время официальных мероприятий.
-    </p>
+<h3>Pit-area</h3>
+<p>
+Pit используется для обслуживания ROBOT и подготовки к MATCH.
+Рабочее место должно оставаться организованным и безопасным.
+Проходы и зоны общего пользования нельзя блокировать.
+</p>
 
+<h3>Robot cart</h3>
+<p>
+Тележка ROBOT должна позволять безопасно перемещать машину между
+pit-area, инспекцией, queueing и FIELD.
+</p>
 </section>
 
 
-<section class="chapter" id="c6">
+<section class="chapter" id="s6">
+<div class="number">06 / AWARDS</div>
+<h2>Награды</h2>
 
-    <div class="number">06</div>
+<p>
+Manual отдельно описывает командные награды, награды,
+определяемые судьями, турнирные награды ALLIANCE,
+индивидуальные и проектные награды.
+</p>
 
-    <h2>Награды</h2>
-
-    <p>
-        Руководство содержит требования
-        и процедуры, связанные
-        с наградами FIRST Tech Challenge.
-    </p>
-
+<p>
+Для judged awards важны не только результат ROBOT на FIELD,
+но и инженерный процесс, понимание конструкции, работа команды,
+документация и способность участников объяснять собственные решения.
+</p>
 </section>
 
 
-<section class="chapter" id="c8">
+<section class="chapter" id="s8">
+<div class="number">08 / GAME OVERVIEW</div>
+<h2>BIOBUZZ</h2>
 
-    <div class="number">08</div>
+<p>
+В BIOBUZZ два конкурирующих ALLIANCE, каждый состоящий из двух команд,
+собирают <strong>POLLEN</strong> и <strong>NECTAR</strong>.
+Игровые элементы запускаются в HIVE и размещаются в FLOWER.
+</p>
 
-    <h2>Обзор игры</h2>
+<h3>AUTO — первые 30 секунд</h3>
+<p>
+Первые 30 секунд MATCH ROBOT работают автономно.
+ROBOT могут использовать датчики для навигации, взаимодействовать
+с POLLEN и запускать игровые элементы в CELL своего HIVE.
+</p>
 
-    <p>
-        Здесь начинается техническая часть,
-        посвящённая непосредственно игре
-        сезона BIOBUZZ.
-    </p>
+<h3>HIVE</h3>
+<p>
+Когда в обращённой вверх CELL оказывается достаточное количество
+игровых элементов, HIVE может опрокинуться. Опрокидывание приносит
+очки и открывает дополнительный NECTAR.
+</p>
 
+<h3>Driver-controlled — следующие 2 минуты</h3>
+<p>
+После автономного периода управление принимают водители.
+ROBOT продолжают собирать и забивать POLLEN и NECTAR,
+работая с HIVE и FLOWER.
+</p>
+
+<h3>FLOWER</h3>
+<p>
+Ближе к завершению MATCH ALLIANCE стремятся заполнить FLOWER.
+Размещение ALLIANCE NECTAR и контроль FLOWER влияют на итоговый счёт.
+Побеждает ALLIANCE с большим количеством очков; дополнительные
+рейтинговые достижения используются в турнирной системе.
+</p>
 </section>
 
 
-<section class="chapter" id="c9">
+<section class="chapter" id="s9">
+<div class="number">09 / ARENA</div>
+<h2>ARENA</h2>
 
-    <div class="number">09</div>
+<p>
+ARENA включает FIELD, игровые элементы, queueing-area,
+командную media-area и оборудование, необходимое для проведения MATCH.
+</p>
 
-    <h2>Арена</h2>
+<h3>9.1 Размеры и точность</h3>
+<p>
+Официальная 3D CAD-модель используется как представление FIELD.
+Для размеров модели Manual указывает общий допуск приблизительно
+±1 дюйм (±2,5 см), если отдельно не установлено иное.
+</p>
 
-    <p>
-        Раздел описывает игровое поле,
-        элементы арены и оборудование,
-        используемое во время матчей.
-    </p>
-
-</section>
-
-
-<section class="chapter" id="c10">
-
-    <div class="number">10</div>
-
-    <h2>
-        Подробности игры
-    </h2>
-
-    <p>
-        Здесь описываются игровые действия,
-        условия матча и взаимодействие
-        роботов с элементами игры.
-    </p>
-
-</section>
-
-
-<section class="chapter" id="c11">
-
-    <div class="number">11</div>
-
-    <h2>
-        Правила игры
-    </h2>
-
-    <p>
-        Раздел содержит правила,
-        ограничения и требования,
-        которые действуют непосредственно
-        во время матчей.
-    </p>
-
-</section>
-
-
-<section class="chapter" id="c12">
-
-    <div class="number">12</div>
-
-    <h2>
-        Правила конструкции робота
-    </h2>
-
-    <p>
-        Один из наиболее важных
-        инженерных разделов руководства.
-        Он определяет требования,
-        которым должен соответствовать робот.
-    </p>
-
-</section>
-
-
-<section class="chapter" id="c13">
-
-    <div class="number">13</div>
-
-    <h2>Турнир</h2>
-
-    <p>
-        Раздел посвящён структуре турнира,
-        матчам и процедурам соревнований.
-    </p>
-
-</section>
-
-
-<section class="chapter" id="c16">
-
-    <div class="number">16</div>
-
-    <h2>Глоссарий</h2>
-
-    <p>
-        Термины и определения,
-        используемые в официальном
-        руководстве соревнований.
-    </p>
-
-</section>
-
-
-<div class="original">
-
-    <h3>
-        Original Competition Manual
-    </h3>
-
-    <p>
-        Для полного текста правил,
-        технических требований
-        и официальных формулировок
-        можно открыть оригинальный PDF.
-    </p>
-<a
-    href="./manual-ru.pdf"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="pdf-btn">
-
-    OPEN FULL MANUAL ↗
-
-</a>
+<div class="note">
+FIELD многократно собирается, разбирается и перевозится.
+Команда должна проектировать ROBOT так, чтобы небольшие допустимые
+различия официальных FIELD не ломали стратегию или механизм.
 </div>
 
+<h3>9.2 FIELD</h3>
+<p>
+Игровая область имеет размер примерно 144 × 144 дюйма
+(365,75 × 365,75 см). Пол состоит из 36 соединённых мягких
+пенопластовых TILE размером примерно 24 × 24 дюйма.
+</p>
 
+<p>
+На FIELD находятся четыре FLOWER и центральная конструкция HIVE
+с красным и синим HIVE — по одному для каждого ALLIANCE.
+</p>
+
+<h3>9.3 Зоны</h3>
+<p>
+Manual различает области вне FIELD и зоны внутри FIELD.
+К важным зонам относятся ALLIANCE AREA, LOADING ZONE и GARDEN.
+Разметка выполняется лентой соответствующего ALLIANCE.
+</p>
+
+<h3>9.5 ALLIANCE AREA</h3>
+<p>
+ALLIANCE AREA — обозначенная красная или синяя область рядом с FIELD,
+где участники, управляющие ROBOT, находятся во время MATCH.
+</p>
+
+<h3>9.6 HIVE</h3>
+<p>
+Конструкция HIVE расположена в центре FIELD. В общей раме находятся
+красный и синий HIVE. Каждый HIVE имеет две CELL и вращается вокруг
+шарнира между двумя устойчивыми положениями.
+</p>
+
+<p>
+CELL предназначены для удержания POLLEN и NECTAR.
+В нижней части CELL размещены AprilTag, которые ROBOT может использовать
+для компьютерного зрения и автономной навигации.
+</p>
+
+<h3>FLOWER и игровые элементы</h3>
+<p>
+FLOWER являются отдельными объектами подсчёта и взаимодействуют
+с POLLEN и NECTAR. Стратегия ALLIANCE должна учитывать не только
+доставку элементов, но и состояние HIVE и контроль FLOWER.
+</p>
+</section>
+
+
+<section class="chapter" id="s10">
+<div class="number">10 / GAME DETAILS</div>
+<h2>Как проходит MATCH</h2>
+
+<h3>Подготовка</h3>
+<p>
+Перед началом MATCH команды устанавливают ROBOT и оборудование
+в соответствии с требованиями стартовой конфигурации.
+После готовности FIELD начинается официальный цикл MATCH.
+</p>
+
+<h3>Периоды</h3>
+<div class="grid">
+<div class="box"><b>30 секунд</b>Автономный период.</div>
+<div class="box"><b>2 минуты</b>Период управления водителями.</div>
 </div>
+
+<h3>Подсчёт</h3>
+<p>
+Очки связаны с действиями ROBOT с POLLEN, NECTAR, HIVE и FLOWER.
+Некоторые достижения также используются для рейтинговых показателей.
+Официальный результат определяет система мероприятия и судейская команда.
+</p>
+
+<h3>Нарушения</h3>
+<p>
+Нарушения правил могут приводить к назначению предусмотренных Manual
+последствий. Команда должна учитывать не только собственные действия,
+но и то, как её стратегия воздействует на ROBOT соперника и FIELD.
+</p>
+</section>
+
+
+<section class="chapter" id="s11">
+<div class="number">11 / GAME RULES</div>
+<h2>Правила игры</h2>
+
+<h3>11.1 Личная безопасность</h3>
+<p>
+Безопасность участников и волонтёров имеет приоритет.
+Нельзя использовать стратегию или действие, создающее неоправданный риск.
+</p>
+
+<h3>11.2 Поведение</h3>
+<p>
+Команды должны соблюдать принципы FIRST, уважать участников,
+волонтёров, судей и соперников. Преднамеренное нарушение духа
+соревнования не является нормальной игровой стратегией.
+</p>
+
+<h3>11.3 Перед MATCH</h3>
+<ul>
+<li>ROBOT должен соответствовать требованиям инспекции.</li>
+<li>Команда должна прибыть к FIELD вовремя.</li>
+<li>Стартовая конфигурация должна соответствовать требованиям игры.</li>
+<li>Оборудование и участники располагаются в разрешённых местах.</li>
+</ul>
+
+<h3>11.4 Во время MATCH</h3>
+<p>
+ROBOT и DRIVE TEAM должны соблюдать ограничения взаимодействия
+с FIELD, игровыми элементами, зонами и другими ROBOT.
+Контакт, защита, блокирование и владение игровыми элементами
+оцениваются в контексте конкретных правил и духа BIOBUZZ.
+</p>
+
+<div class="rule">
+<strong>Практический принцип:</strong> если стратегия существует главным
+образом для обхода назначения правила, команда не должна рассчитывать,
+что такая стратегия будет считаться допустимой только из-за отсутствия
+дословного запрета на каждую возможную ситуацию.
+</div>
+</section>
+
+
+<section class="chapter" id="s12">
+<div class="number">12 / ROBOT CONSTRUCTION</div>
+<h2>Конструкция ROBOT</h2>
+
+<p>
+Раздел R определяет, какие механические, электрические и управляющие
+системы могут использоваться на соревновательном ROBOT.
+</p>
+
+<h3>Общая конструкция</h3>
+<p>
+ROBOT должен быть безопасным, инспектируемым и соответствовать
+ограничениям сезона. Конструкция не должна намеренно повреждать
+FIELD, игровые элементы или другие ROBOT.
+</p>
+
+<h3>Изготовление</h3>
+<p>
+Команда может проектировать и изготавливать собственные детали,
+использовать разрешённые COTS-компоненты и объединять их в механизмы,
+если итоговая система соответствует требованиям Manual.
+</p>
+
+<h3>Двигатели и сервоприводы</h3>
+
+<div class="rule">
+<strong>R503.</strong> ROBOT ограничен максимум
+<strong>8 двигателями и 8 сервоприводами</strong> из разрешённых
+категорий. Если используются разные конфигурации ROBOT,
+общий набор механизмов также должен оставаться в пределах этого лимита.
+</div>
+
+<div class="rule">
+<strong>R504.</strong> Внутреннюю механическую или электрическую систему
+двигателя/servo нельзя произвольно модифицировать. Разрешены только
+предусмотренные исключения, например необходимые монтажные изменения,
+допустимая работа с проводами, разрешённая изготовителем настройка servo,
+маркировка, изоляция, ремонт без изменения исходных характеристик
+и предусмотренное изготовителем обслуживание.
+</div>
+
+<div class="rule">
+<strong>R505.</strong> Приводы должны получать питание и управляющие
+сигналы через разрешённые устройства регулирования мощности.
+</div>
+
+<h3>Servo</h3>
+<p>
+Servo должны соответствовать установленным требованиям по электрическим
+и механическим характеристикам и быть совместимыми с устройством,
+которое их питает. Команда должна иметь документацию для компонентов,
+если их допустимость необходимо подтвердить инспектору.
+</p>
+
+<h3>Power distribution</h3>
+<p>
+Электрическая архитектура ROBOT должна использовать разрешённые
+аккумуляторы, распределение питания, контроллеры, проводку,
+предохранительные устройства и соединения.
+</p>
+
+<h3>Control, command & signals</h3>
+<p>
+Управление ROBOT строится на разрешённой системе управления.
+Команда должна обеспечить корректную связь между Driver Station,
+Control Hub/другими разрешёнными компонентами, приводами и датчиками.
+</p>
+
+<h3>Operator Console</h3>
+<p>
+Пульт оператора используется DRIVE TEAM для управления ROBOT.
+Он должен соответствовать ограничениям Manual и не создавать
+помех официальной системе FIELD.
+</p>
+</section>
+
+
+<section class="chapter" id="s13">
+<div class="number">13 / TOURNAMENT</div>
+<h2>Турнир</h2>
+
+<h3>Practice MATCH</h3>
+<p>
+Тренировочные MATCH позволяют командам проверить ROBOT и работу
+на официальном FIELD до основной соревновательной части,
+если формат мероприятия предусматривает такую возможность.
+</p>
+
+<h3>Qualification MATCH</h3>
+<p>
+В квалификационной части команды играют по расписанию и получают
+результаты, используемые для формирования итогового рейтинга.
+</p>
+
+<h3>Разъяснение результата</h3>
+<p>
+Manual предусматривает официальный процесс обращения команды
+за разъяснением результата MATCH. Вопросы должны подаваться
+в установленном формате и через предусмотренный процесс мероприятия.
+</p>
+
+<h3>Playoff</h3>
+<p>
+После квалификации соревнование переходит к playoff.
+ALLIANCE соревнуются по турнирной структуре до определения победителя.
+Manual отдельно регулирует состав ALLIANCE, сетку, повторные MATCH
+и порядок продвижения.
+</p>
+
+<h3>Два дивизиона</h3>
+<p>
+Для мероприятий соответствующего масштаба Manual предусматривает
+формат с двумя дивизионами и дальнейшее определение итоговых результатов.
+</p>
+</section>
+
+
+<section class="chapter" id="s14">
+<div class="number">14 / LEAGUE TOURNAMENTS</div>
+<h2>Лиговые турниры</h2>
+
+<p>
+Для лиг применяется отдельная структура проведения сезона.
+Результаты команд могут накапливаться в рамках лиги,
+после чего проводится League Tournament согласно требованиям Manual.
+</p>
+</section>
+
+
+<section class="chapter" id="s15">
+<div class="number">15 / FIRST CHAMPIONSHIP</div>
+<h2>FIRST Championship</h2>
+
+<p>
+Для FIRST Championship Manual предусматривает дополнительные
+особенности, включая изменения отдельных процедур наград,
+возможные игровые изменения, особенности ALLIANCE и playoff.
+</p>
+
+<p>
+Команды, дошедшие до этого уровня, должны ориентироваться
+на актуальные правила Championship, поскольку они могут отличаться
+от стандартного регионального формата.
+</p>
+</section>
+
+
+<section class="chapter" id="s16">
+<div class="number">16 / GLOSSARY</div>
+<h2>Глоссарий</h2>
+
+<div class="grid">
+<div class="box"><b>ALLIANCE</b>Две команды, совместно играющие одну сторону MATCH.</div>
+<div class="box"><b>ARENA</b>Полная инфраструктура официальной игры.</div>
+<div class="box"><b>FIELD</b>Игровая площадка ROBOT.</div>
+<div class="box"><b>MATCH</b>Официальный игровой раунд.</div>
+<div class="box"><b>ROBOT</b>Соревновательная машина команды.</div>
+<div class="box"><b>POLLEN</b>Один из игровых элементов BIOBUZZ.</div>
+<div class="box"><b>NECTAR</b>Игровой элемент, используемый в механике подсчёта BIOBUZZ.</div>
+<div class="box"><b>HIVE</b>Центральная качающаяся конструкция с CELL.</div>
+<div class="box"><b>CELL</b>Часть HIVE, принимающая игровые элементы.</div>
+<div class="box"><b>FLOWER</b>Объект FIELD, связанный с размещением игровых элементов и подсчётом.</div>
+<div class="box"><b>AUTO</b>Первые 30 секунд автономной работы ROBOT.</div>
+<div class="box"><b>DRIVE TEAM</b>Участники, работающие с ROBOT во время MATCH.</div>
+</div>
+
+<div class="note">
+Эта страница сделана как удобная командная веб-версия правил.
+При подготовке ROBOT к официальной инспекции особенно внимательно
+проверяйте конкретные номера R-, G-, E-, I- и T-правил.
+</div>
+</section>
 
 </main>
-
+</div>
 
 <footer>
-
-    © 2026 BIL BARBIE · FTC #25272 · BIOBUZZ
-
+BIL BARBIE · FTC #25272 · BIOBUZZ 2026–2027
 </footer>
-
 
 </body>
 </html>

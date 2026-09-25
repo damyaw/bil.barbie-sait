@@ -2,1874 +2,2168 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>BIL Barbie | Robotics Team</title>
-
-  <style>
-
-    /* =========================
-       COLORS
-    ========================== */
-
-    :root {
-      --cream: #FFF7E6;
-      --cream-light: #FFF7EC;
-
-      --pink: #EFBFC2;
-      --pink-light: #F4C9D6;
-      --pink-dark: #D5999D;
-
-      --wine: #540209;
-      --red: #8B0000;
-
-      --green: #132A13;
-      --green-light: #1D4214;
-      --olive: #45462A;
-    }
-
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-
-    body {
-
-      font-family:
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Helvetica,
-      Arial,
-      sans-serif;
-
-      background: var(--cream);
-
-      color: var(--green);
-
-      overflow-x: hidden;
-    }
-
-
-
-    /* =========================
-       NAVIGATION
-    ========================== */
-
-    nav {
-
-      position: fixed;
-
-      top: 0;
-      left: 0;
-
-      width: 100%;
-
-      z-index: 1000;
-
-      display: flex;
-
-      justify-content: space-between;
-
-      align-items: center;
-
-      padding: 20px 7%;
-
-      background:
-      rgba(255,247,230,0.82);
-
-      backdrop-filter: blur(20px);
-
-      border-bottom:
-      1px solid rgba(19,42,19,0.08);
-    }
-
-
-
-    /* LOGO */
-
-    .brand {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 11px;
-
-      text-decoration: none;
-
-      color: var(--green);
-    }
-
-
-    .logo {
-
-      width: 42px;
-
-      height: 42px;
-
-      border-radius: 50%;
-
-      background: var(--wine);
-
-      color: var(--pink);
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      font-size: 13px;
-
-      font-weight: 900;
-
-      letter-spacing: -1px;
-    }
-
-
-    .brand-name {
-
-      font-size: 19px;
-
-      font-weight: 800;
-
-      letter-spacing: -0.8px;
-    }
-
-
-    .brand-name span {
-
-      color: var(--pink-dark);
-    }
-
-
-
-    nav ul {
-
-      display: flex;
-
-      list-style: none;
-
-      gap: 30px;
-
-      align-items: center;
-    }
-
-
-    nav a {
-
-      color: var(--green);
-
-      text-decoration: none;
-
-      font-size: 14px;
-
-      font-weight: 600;
-
-      transition: 0.25s;
-    }
-
-
-    nav ul a:hover {
-
-      color: var(--pink-dark);
-    }
-
-
-
-    /* =========================
-       HERO
-    ========================== */
-
-    .hero {
-
-      min-height: 100vh;
-
-      display: flex;
-
-      align-items: center;
-
-      padding:
-
-      140px 8%
-      80px;
-
-      position: relative;
-
-      overflow: hidden;
-    }
-
-
-
-    .hero::before {
-
-      content: "";
-
-      position: absolute;
-
-      width: 620px;
-
-      height: 620px;
-
-      background:
-
-      radial-gradient(
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BIL Barbie | FTC #25272</title>
+
+<style>
+
+:root{
+    --cream:#FFF7E6;
+    --cream2:#FFF1CF;
+    --white:#FFF7EC;
+    --pink:#EFBFC2;
+    --pink2:#F4C9D6;
+    --dusty:#D5999D;
+    --wine:#540209;
+    --red:#8B0000;
+    --green:#132A13;
+    --green2:#1D4214;
+    --apple:#578A3F;
+    --olive:#45462A;
+    --radius:32px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:-apple-system,BlinkMacSystemFont,
+    "Segoe UI",Helvetica,Arial,sans-serif;
+
+    background:var(--cream);
+    color:var(--green);
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+    position:fixed;
+    top:18px;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:calc(100% - 36px);
+    max-width:1400px;
+
+    padding:10px 14px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:rgba(255,247,230,.84);
+
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+
+    border:1px solid rgba(84,2,9,.10);
+    border-radius:100px;
+
+    z-index:1000;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    text-decoration:none;
+    flex-shrink:0;
+}
+
+.logo{
+    width:46px;
+    height:46px;
+
+    border-radius:50%;
+    overflow:hidden;
+
+    background:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.logo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.brand-name{
+    font-size:15px;
+    font-weight:850;
+    letter-spacing:-.5px;
+    white-space:nowrap;
+}
+
+.brand-name span{
+    color:var(--dusty);
+}
+
+nav ul{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    list-style:none;
+}
+
+nav ul a{
+    text-decoration:none;
+    font-size:11px;
+    font-weight:750;
+    white-space:nowrap;
+    transition:.2s;
+}
+
+nav ul a:hover{
+    color:var(--dusty);
+}
+
+.nav-contact{
+    padding:11px 17px;
+    background:var(--green);
+    color:var(--cream)!important;
+    border-radius:100px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    padding:150px 8% 80px;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    right:-160px;
+    top:30px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
         circle,
+        rgba(239,191,194,.95),
+        rgba(244,201,214,.48) 45%,
+        rgba(244,201,214,0) 72%
+    );
 
-        #EFBFC2 0%,
+    z-index:0;
+}
 
-        rgba(239,191,194,0.8) 45%,
+/* BIL BARBIE APPLE BACKGROUND */
 
-        rgba(239,191,194,0) 72%
+.hero-watermark{
+    position:absolute;
 
-      );
+    right:0;
+    top:50%;
 
-      border-radius: 50%;
+    transform:translateY(-45%) rotate(4deg);
 
-      right: -170px;
+    width:min(48vw,680px);
 
-      top: 100px;
+    opacity:.14;
 
-      z-index: -1;
+    z-index:1;
+    pointer-events:none;
+}
+
+.hero-watermark img{
+    width:100%;
+    display:block;
+    border-radius:50%;
+}
+
+.hero-content{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+
+    position:relative;
+    z-index:3;
+}
+
+.tag{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:9px 15px;
+
+    border:1px solid rgba(84,2,9,.15);
+    border-radius:100px;
+
+    font-size:11px;
+    font-weight:850;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+
+    color:var(--wine);
+}
+
+.tag-dot{
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+    background:var(--apple);
+}
+
+h1{
+    margin-top:32px;
+
+    font-size:clamp(78px,13vw,175px);
+    line-height:.78;
+    letter-spacing:-10px;
+
+    color:var(--wine);
+    font-weight:850;
+}
+
+h1 span{
+    color:var(--dusty);
+    font-style:italic;
+    font-weight:500;
+}
+
+.hero-bottom{
+    margin-top:55px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+
+    gap:50px;
+}
+
+.hero-text{
+    max-width:650px;
+
+    font-size:18px;
+    line-height:1.7;
+
+    color:var(--olive);
+}
+
+.hero-text strong{
+    color:var(--green);
+}
+
+.buttons{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:15px 23px;
+
+    border-radius:100px;
+
+    text-decoration:none;
+
+    font-size:13px;
+    font-weight:800;
+
+    transition:.25s;
+}
+
+.btn-primary{
+    background:var(--wine);
+    color:white;
+}
+
+.btn-primary:hover{
+    background:var(--red);
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+    border:1px solid var(--green);
+    color:var(--green);
+}
+
+.btn-outline:hover{
+    background:var(--green);
+    color:white;
+    transform:translateY(-3px);
+}
+
+/* =========================
+   MOVING BAR
+========================= */
+
+.marquee{
+    padding:17px 0;
+
+    overflow:hidden;
+    white-space:nowrap;
+
+    background:var(--wine);
+    color:var(--pink);
+
+    font-size:11px;
+    font-weight:850;
+    letter-spacing:2px;
+}
+
+.marquee-inner{
+    display:inline-block;
+    animation:marquee 28s linear infinite;
+}
+
+@keyframes marquee{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+section{
+    padding:125px 8%;
+}
+
+.inner{
+    max-width:1200px;
+    margin:auto;
+}
+
+.label{
+    margin-bottom:18px;
+
+    color:var(--dusty);
+
+    font-size:11px;
+    font-weight:850;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.title{
+    max-width:950px;
+
+    font-size:clamp(48px,7vw,95px);
+    line-height:.94;
+    letter-spacing:-5px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    background:var(--green);
+    color:var(--cream);
+}
+
+.about .title{
+    color:var(--cream);
+}
+
+.about-grid{
+    margin-top:70px;
+
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+
+    gap:90px;
+}
+
+.about-copy{
+    font-size:18px;
+    line-height:1.8;
+
+    color:#F5EBD3;
+}
+
+.about-copy p+p{
+    margin-top:22px;
+}
+
+.about-copy strong{
+    color:var(--pink);
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.stat{
+    min-height:160px;
+    padding:25px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:25px;
+}
+
+.stat-big{
+    font-size:35px;
+    font-weight:850;
+    color:var(--pink);
+}
+
+.stat-small{
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    opacity:.65;
+}
+
+/* =========================
+   BLOCKS
+========================= */
+
+.blocks{
+    background:var(--cream);
+    overflow:hidden;
+}
+
+.blocks-header{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+
+    gap:30px;
+}
+
+.blocks-controls{
+    display:flex;
+    gap:8px;
+}
+
+.arrow{
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+    border:1px solid rgba(19,42,19,.25);
+
+    background:transparent;
+    color:var(--green);
+
+    font-size:20px;
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.arrow:hover{
+    background:var(--green);
+    color:white;
+}
+
+.slider{
+    margin-top:60px;
+
+    display:flex;
+    gap:18px;
+
+    overflow-x:auto;
+
+    scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;
+
+    scrollbar-width:none;
+
+    padding-bottom:10px;
+}
+
+.slider::-webkit-scrollbar{
+    display:none;
+}
+
+.block-card{
+    flex:0 0 min(78vw,520px);
+
+    min-height:520px;
+
+    padding:35px;
+
+    border-radius:35px;
+
+    scroll-snap-align:start;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.block-card:nth-child(1){
+    background:var(--pink);
+    color:var(--wine);
+}
+
+.block-card:nth-child(2){
+    background:var(--wine);
+    color:var(--cream);
+}
+
+.block-card:nth-child(3){
+    background:var(--olive);
+    color:var(--cream);
+}
+
+.block-card:nth-child(4){
+    background:var(--pink2);
+    color:var(--wine);
+}
+
+.block-card:nth-child(5){
+    background:var(--green);
+    color:var(--cream);
+}
+
+.block-top{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+
+    font-size:11px;
+    font-weight:850;
+    letter-spacing:1.4px;
+    text-transform:uppercase;
+
+    opacity:.7;
+}
+
+.block-number{
+    margin-top:70px;
+
+    font-size:90px;
+    line-height:.8;
+    font-weight:900;
+
+    opacity:.12;
+}
+
+.block-card h3{
+    margin-top:20px;
+
+    font-size:42px;
+    line-height:1;
+    letter-spacing:-2px;
+}
+
+.block-card p{
+    margin-top:18px;
+
+    max-width:420px;
+
+    font-size:14px;
+    line-height:1.65;
+
+    opacity:.82;
+}
+
+.block-bottom{
+    margin-top:45px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:20px;
+
+    padding-top:20px;
+
+    border-top:1px solid currentColor;
+
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1px;
+
+    opacity:.7;
+}
+
+/* =========================
+   ENGINEERING
+========================= */
+
+.engineering{
+    background:var(--white);
+}
+
+.engineering .title{
+    color:var(--wine);
+}
+
+.cards{
+    margin-top:65px;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    gap:15px;
+}
+
+.card{
+    min-height:390px;
+
+    padding:30px;
+
+    border-radius:var(--radius);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card:nth-child(1){
+    background:var(--pink);
+    color:var(--wine);
+}
+
+.card:nth-child(2){
+    background:var(--wine);
+    color:var(--cream);
+}
+
+.card:nth-child(3){
+    background:var(--olive);
+    color:var(--cream);
+}
+
+.card-num{
+    font-size:11px;
+    font-weight:850;
+    letter-spacing:1.5px;
+    opacity:.6;
+}
+
+.card h3{
+    margin-bottom:13px;
+
+    font-size:30px;
+    letter-spacing:-1.5px;
+}
+
+.card p{
+    font-size:14px;
+    line-height:1.65;
+    opacity:.8;
+}
+
+/* =========================
+   PORTFOLIO
+========================= */
+
+.portfolio{
+    position:relative;
+    overflow:hidden;
+
+    text-align:center;
+
+    background:var(--pink2);
+}
+
+.portfolio::before{
+    content:"B";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-52%);
+
+    font-size:650px;
+    font-weight:900;
+
+    color:rgba(84,2,9,.035);
+
+    pointer-events:none;
+}
+
+.portfolio-content{
+    max-width:850px;
+    margin:auto;
+
+    position:relative;
+    z-index:2;
+}
+
+.portfolio .title{
+    margin:auto;
+    color:var(--wine);
+}
+
+.portfolio p{
+    max-width:620px;
+
+    margin:30px auto 35px;
+
+    font-size:17px;
+    line-height:1.7;
+
+    color:var(--olive);
+}
+
+.portfolio-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-top:5px;
+
+    padding:16px 28px;
+    min-width:280px;
+
+    background:var(--wine);
+    color:var(--cream);
+
+    border-radius:100px;
+
+    text-decoration:none;
+
+    font-size:12px;
+    font-weight:850;
+    letter-spacing:.7px;
+
+    transition:.25s;
+}
+
+.portfolio-btn:hover{
+    background:var(--red);
+    transform:translateY(-3px);
+}
+
+.portfolio-data{
+    margin:45px auto 0;
+
+    max-width:750px;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    gap:10px;
+}
+
+.portfolio-stat{
+    padding:25px 15px;
+
+    background:rgba(255,255,255,.35);
+
+    border:1px solid rgba(84,2,9,.08);
+    border-radius:22px;
+}
+
+.portfolio-stat strong{
+    display:block;
+
+    font-size:28px;
+    color:var(--wine);
+}
+
+.portfolio-stat span{
+    display:block;
+
+    margin-top:6px;
+
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1px;
+    text-transform:uppercase;
+
+    color:var(--olive);
+}
+
+/* =========================
+   MANUAL
+========================= */
+
+.manual{
+    background:var(--wine);
+    color:var(--cream);
+}
+
+.manual .title{
+    color:var(--cream);
+}
+
+.manual-intro{
+    max-width:650px;
+
+    margin-top:30px;
+
+    font-size:17px;
+    line-height:1.7;
+
+    color:var(--pink);
+}
+
+.manual-cards{
+    margin-top:65px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:18px;
+}
+
+.manual-card{
+    min-height:380px;
+
+    padding:35px;
+
+    border-radius:35px;
+
+    text-decoration:none;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    transition:.3s;
+}
+
+.manual-card:hover{
+    transform:translateY(-8px);
+}
+
+.manual-kz{
+    background:var(--pink);
+    color:var(--wine);
+}
+
+.manual-ru{
+    background:var(--cream);
+    color:var(--green);
+}
+
+.manual-language{
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.manual-icon{
+    margin-top:35px;
+
+    font-size:70px;
+    font-weight:850;
+
+    opacity:.16;
+}
+
+.manual-card h3{
+    margin-top:30px;
+
+    max-width:450px;
+
+    font-size:35px;
+    line-height:1.05;
+    letter-spacing:-2px;
+}
+
+.manual-bottom{
+    margin-top:40px;
+
+    padding-top:20px;
+
+    border-top:1px solid currentColor;
+
+    display:flex;
+    justify-content:space-between;
+
+    gap:20px;
+
+    font-size:11px;
+    font-weight:850;
+    letter-spacing:1px;
+}
+
+/* =========================
+   PARTNERS
+========================= */
+
+.partners{
+    background:var(--cream);
+}
+
+.partner-intro{
+    max-width:680px;
+
+    margin-top:30px;
+
+    font-size:17px;
+    line-height:1.7;
+
+    color:var(--olive);
+}
+
+.partner-grid{
+    margin-top:65px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:18px;
+}
+
+.partner-card{
+    min-height:520px;
+
+    padding:35px;
+
+    border-radius:35px;
+
+    display:flex;
+    flex-direction:column;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.partner-card.wit{
+    background:#2516B7;
+    color:white;
+}
+
+.partner-card.g4g{
+    background:white;
+    color:#202020;
+
+    border:1px solid rgba(84,2,9,.08);
+}
+
+/* REAL PARTNER IMAGES */
+
+.partner-logo{
+    width:155px;
+    height:155px;
+
+    flex:0 0 155px;
+
+    border-radius:50%;
+    overflow:hidden;
+
+    background:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:45px;
+}
+
+.partner-logo img{
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    border-radius:50%;
+}
+
+.partner-type{
+    margin-bottom:10px;
+
+    font-size:10px;
+    font-weight:850;
+    letter-spacing:2px;
+    text-transform:uppercase;
+
+    opacity:.6;
+}
+
+.partner-card h3{
+    font-size:38px;
+    letter-spacing:-2px;
+
+    margin-bottom:18px;
+}
+
+.partner-card p{
+    max-width:520px;
+
+    font-size:14px;
+    line-height:1.7;
+
+    opacity:.8;
+}
+
+.partner-links{
+    margin-top:auto;
+
+    padding-top:35px;
+
+    display:flex;
+    gap:9px;
+    flex-wrap:wrap;
+}
+
+.partner-link{
+    padding:12px 18px;
+
+    border-radius:100px;
+    border:1px solid currentColor;
+
+    color:inherit;
+    text-decoration:none;
+
+    font-size:11px;
+    font-weight:850;
+
+    transition:.2s;
+}
+
+.partner-link:hover{
+    transform:translateY(-2px);
+    opacity:.7;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    background:var(--green);
+    color:var(--cream);
+}
+
+.contact .title{
+    color:var(--cream);
+}
+
+.contact-text{
+    max-width:600px;
+
+    margin-top:30px;
+
+    color:var(--pink);
+
+    font-size:18px;
+    line-height:1.6;
+}
+
+.contacts{
+    margin-top:70px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:15px;
+}
+
+.contact-card{
+    padding:32px;
+
+    border-radius:28px;
+
+    text-decoration:none;
+
+    transition:.25s;
+}
+
+.contact-card:hover{
+    transform:translateY(-5px);
+}
+
+.contact-card.instagram{
+    background:var(--pink);
+    color:var(--wine);
+}
+
+.contact-card.phone{
+    background:var(--wine);
+    color:var(--cream);
+}
+
+.contact-label{
+    margin-bottom:30px;
+
+    font-size:10px;
+    font-weight:850;
+    letter-spacing:2px;
+    text-transform:uppercase;
+
+    opacity:.65;
+}
+
+.contact-value{
+    font-size:clamp(24px,4vw,42px);
+    font-weight:850;
+    letter-spacing:-2px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:28px 8%;
+
+    background:#2A1616;
+    color:var(--pink);
+
+    display:flex;
+    justify-content:space-between;
+
+    gap:20px;
+
+    font-size:10px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:1100px){
+
+    nav ul{
+        gap:12px;
     }
 
+    nav ul a{
+        font-size:10px;
+    }
+}
 
+@media(max-width:950px){
 
-    .hero::after {
-
-      content: "";
-
-      position: absolute;
-
-      width: 300px;
-
-      height: 300px;
-
-      background: var(--pink-dark);
-
-      border-radius: 50%;
-
-      right: 220px;
-
-      bottom: -190px;
-
-      opacity: 0.25;
-
-      z-index: -1;
+    nav ul li:not(:last-child){
+        display:none;
     }
 
-
-
-    .hero-content {
-
-      max-width: 900px;
-
-      position: relative;
-
-      z-index: 2;
+    .hero{
+        padding:135px 7% 70px;
     }
 
-
-
-    .tag {
-
-      display: inline-block;
-
-      background: var(--green);
-
-      color: var(--cream);
-
-      padding: 9px 17px;
-
-      border-radius: 100px;
-
-      font-size: 12px;
-
-      font-weight: 700;
-
-      letter-spacing: 1.5px;
-
-      text-transform: uppercase;
-
-      margin-bottom: 30px;
+    h1{
+        letter-spacing:-6px;
     }
 
-
-
-    h1 {
-
-      font-size:
-
-      clamp(75px, 11vw, 155px);
-
-      line-height: 0.85;
-
-      letter-spacing: -7px;
-
-      font-weight: 800;
-
-      color: var(--wine);
+    .hero-watermark{
+        width:85vw;
+        right:-35%;
+        opacity:.09;
     }
 
-
-
-    h1 span {
-
-      color: var(--pink-dark);
-
-      font-weight: 500;
-
-      font-style: italic;
+    .hero-bottom{
+        flex-direction:column;
+        align-items:flex-start;
     }
 
-
-
-    .hero-description {
-
-      max-width: 650px;
-
-      margin-top: 38px;
-
-      font-size: 19px;
-
-      line-height: 1.65;
-
-      color: var(--olive);
+    section{
+        padding:90px 7%;
     }
 
-
-
-    .hero-description strong {
-
-      color: var(--wine);
+    .title{
+        letter-spacing:-3px;
     }
 
-
-
-    .buttons {
-
-      display: flex;
-
-      gap: 14px;
-
-      margin-top: 35px;
-
-      flex-wrap: wrap;
+    .about-grid{
+        grid-template-columns:1fr;
+        gap:50px;
     }
 
-
-
-    .button {
-
-      display: inline-block;
-
-      padding:
-
-      15px 25px;
-
-      border-radius: 100px;
-
-      text-decoration: none;
-
-      font-size: 14px;
-
-      font-weight: 700;
-
-      transition: 0.25s;
+    .cards{
+        grid-template-columns:1fr;
     }
 
-
-
-    .button-primary {
-
-      background: var(--wine);
-
-      color: white;
+    .manual-cards{
+        grid-template-columns:1fr;
     }
 
-
-
-    .button-primary:hover {
-
-      transform: translateY(-3px);
-
-      background: var(--red);
+    .partner-grid{
+        grid-template-columns:1fr;
     }
 
+    .contacts{
+        grid-template-columns:1fr;
+    }
+}
 
+@media(max-width:600px){
 
-    .button-secondary {
-
-      border:
-
-      1.5px solid var(--green);
-
-      color: var(--green);
+    .brand-name{
+        display:block;
+        font-size:12px;
     }
 
-
-
-    .button-secondary:hover {
-
-      background: var(--green);
-
-      color: white;
+    .logo{
+        width:40px;
+        height:40px;
     }
 
-
-
-    /* =========================
-       SECTIONS
-    ========================== */
-
-    section {
-
-      padding:
-
-      120px 8%;
+    .block-card{
+        flex-basis:88vw;
+        min-height:500px;
     }
 
-
-
-    .section-label {
-
-      font-size: 12px;
-
-      font-weight: 800;
-
-      letter-spacing: 2px;
-
-      text-transform: uppercase;
-
-      color: var(--pink-dark);
-
-      margin-bottom: 18px;
+    .block-card h3{
+        font-size:34px;
     }
 
-
-
-    .section-title {
-
-      font-size:
-
-      clamp(42px, 6vw, 80px);
-
-      line-height: 1;
-
-      letter-spacing: -4px;
-
-      max-width: 900px;
+    .portfolio-data{
+        grid-template-columns:1fr;
     }
 
-
-
-    /* =========================
-       ABOUT
-    ========================== */
-
-    .about {
-
-      background: var(--green);
-
-      color: var(--cream);
+    .stats{
+        grid-template-columns:1fr 1fr;
     }
 
-
-
-    .about .section-title {
-
-      color: var(--cream);
+    footer{
+        flex-direction:column;
     }
+}
 
-
-
-    .about-grid {
-
-      display: grid;
-
-      grid-template-columns:
-
-      1fr 1fr;
-
-      gap: 80px;
-
-      margin-top: 65px;
-    }
-
-
-
-    .about-text {
-
-      font-size: 18px;
-
-      line-height: 1.8;
-
-      color: #FFF1CF;
-    }
-
-
-
-    .about-text strong {
-
-      color: var(--pink);
-    }
-
-
-
-    .stats {
-
-      display: grid;
-
-      grid-template-columns:
-
-      1fr 1fr;
-
-      gap: 18px;
-    }
-
-
-
-    .stat {
-
-      background:
-
-      rgba(255,255,255,0.08);
-
-      border:
-
-      1px solid
-      rgba(255,255,255,0.13);
-
-      padding: 30px;
-
-      border-radius: 25px;
-    }
-
-
-
-    .stat-number {
-
-      font-size: 42px;
-
-      font-weight: 800;
-
-      color: var(--pink);
-    }
-
-
-
-    .stat-text {
-
-      margin-top: 8px;
-
-      font-size: 12px;
-
-      opacity: 0.75;
-
-      letter-spacing: 1px;
-    }
-
-
-
-    /* =========================
-       ENGINEERING
-    ========================== */
-
-    .work {
-
-      background: var(--cream-light);
-    }
-
-
-
-    .work .section-title {
-
-      color: var(--wine);
-    }
-
-
-
-    .cards {
-
-      display: grid;
-
-      grid-template-columns:
-
-      repeat(3, 1fr);
-
-      gap: 20px;
-
-      margin-top: 60px;
-    }
-
-
-
-    .card {
-
-      min-height: 330px;
-
-      padding: 35px;
-
-      border-radius: 30px;
-
-      display: flex;
-
-      flex-direction: column;
-
-      justify-content: space-between;
-
-      transition: 0.3s;
-    }
-
-
-
-    .card:hover {
-
-      transform: translateY(-7px);
-    }
-
-
-
-    .card:nth-child(1) {
-
-      background: var(--pink);
-
-      color: var(--wine);
-    }
-
-
-
-    .card:nth-child(2) {
-
-      background: var(--wine);
-
-      color: var(--cream);
-    }
-
-
-
-    .card:nth-child(3) {
-
-      background: var(--olive);
-
-      color: var(--cream);
-    }
-
-
-
-    .card-number {
-
-      font-size: 12px;
-
-      font-weight: 800;
-
-      opacity: 0.65;
-
-      letter-spacing: 1px;
-    }
-
-
-
-    .card h3 {
-
-      font-size: 30px;
-
-      letter-spacing: -1px;
-
-      margin-bottom: 12px;
-    }
-
-
-
-    .card p {
-
-      line-height: 1.6;
-
-      opacity: 0.85;
-    }
-
-
-
-    /* =========================
-       PROCESS
-    ========================== */
-
-    .process {
-
-      background: var(--cream);
-    }
-
-
-
-    .process-list {
-
-      margin-top: 60px;
-    }
-
-
-
-    .process-item {
-
-      display: grid;
-
-      grid-template-columns:
-
-      70px 1fr auto;
-
-      align-items: center;
-
-      gap: 20px;
-
-      padding:
-
-      27px 0;
-
-      border-top:
-
-      1px solid
-      rgba(19,42,19,0.18);
-    }
-
-
-
-    .process-item:last-child {
-
-      border-bottom:
-
-      1px solid
-      rgba(19,42,19,0.18);
-    }
-
-
-
-    .process-number {
-
-      color: var(--pink-dark);
-
-      font-weight: 800;
-    }
-
-
-
-    .process-name {
-
-      font-size:
-
-      clamp(25px, 4vw, 45px);
-
-      font-weight: 700;
-
-      letter-spacing: -2px;
-    }
-
-
-
-    .process-info {
-
-      font-size: 11px;
-
-      letter-spacing: 1.5px;
-
-      text-transform: uppercase;
-
-      color: var(--olive);
-    }
-
-
-
-    /* =========================
-       PORTFOLIO
-    ========================== */
-
-    .portfolio {
-
-      text-align: center;
-
-      background: var(--pink-light);
-
-      position: relative;
-
-      overflow: hidden;
-    }
-
-
-
-    .portfolio::before {
-
-      content: "B";
-
-      position: absolute;
-
-      left: 50%;
-
-      top: 50%;
-
-      transform:
-
-      translate(-50%, -53%);
-
-      font-size: 600px;
-
-      font-weight: 900;
-
-      color:
-
-      rgba(84,2,9,0.035);
-
-      pointer-events: none;
-    }
-
-
-
-    .portfolio-content {
-
-      position: relative;
-
-      z-index: 2;
-    }
-
-
-
-    .portfolio .section-title {
-
-      margin: auto;
-
-      color: var(--wine);
-    }
-
-
-
-    .portfolio-description {
-
-      max-width: 600px;
-
-      margin:
-
-      25px auto 35px;
-
-      font-size: 17px;
-
-      line-height: 1.7;
-
-      color: var(--olive);
-    }
-
-
-
-    .view-only {
-
-      margin-top: 18px;
-
-      font-size: 10px;
-
-      font-weight: 700;
-
-      letter-spacing: 2px;
-
-      color: var(--wine);
-
-      opacity: 0.55;
-    }
-
-
-
-    /* =========================
-       CONTACT
-    ========================== */
-
-    .contact {
-
-      background: var(--wine);
-
-      color: var(--cream);
-    }
-
-
-
-    .contact .section-title {
-
-      color: var(--cream);
-    }
-
-
-
-    .contact-intro {
-
-      max-width: 600px;
-
-      margin-top: 25px;
-
-      font-size: 17px;
-
-      line-height: 1.7;
-
-      color: var(--pink);
-    }
-
-
-
-    .contact-grid {
-
-      display: grid;
-
-      grid-template-columns:
-
-      1fr 1fr;
-
-      gap: 20px;
-
-      margin-top: 55px;
-    }
-
-
-
-    .contact-item {
-
-      padding: 32px;
-
-      border-radius: 28px;
-
-      text-decoration: none;
-
-      transition: 0.25s;
-    }
-
-
-
-    .contact-item:hover {
-
-      transform: translateY(-5px);
-    }
-
-
-
-    .instagram {
-
-      background: var(--pink);
-
-      color: var(--wine);
-    }
-
-
-
-    .phone {
-
-      background: var(--green);
-
-      color: var(--cream);
-    }
-
-
-
-    .contact-item small {
-
-      display: block;
-
-      margin-bottom: 25px;
-
-      text-transform: uppercase;
-
-      letter-spacing: 1.5px;
-
-      opacity: 0.65;
-    }
-
-
-
-    .contact-big {
-
-      font-size:
-
-      clamp(24px, 4vw, 40px);
-
-      font-weight: 800;
-
-      letter-spacing: -2px;
-    }
-
-
-
-    /* =========================
-       FOOTER
-    ========================== */
-
-    footer {
-
-      background: #2A1616;
-
-      color: var(--pink);
-
-      padding:
-
-      30px 8%;
-
-      display: flex;
-
-      justify-content:
-      space-between;
-
-      gap: 20px;
-
-      font-size: 11px;
-
-      letter-spacing: 1px;
-    }
-
-
-
-    /* =========================
-       MOBILE
-    ========================== */
-
-    @media
-    (max-width: 800px) {
-
-
-      nav ul {
-
-        display: none;
-      }
-
-
-      h1 {
-
-        letter-spacing: -4px;
-      }
-
-
-      .about-grid,
-      .contact-grid {
-
-        grid-template-columns: 1fr;
-      }
-
-
-      .cards {
-
-        grid-template-columns: 1fr;
-      }
-
-
-      .stats {
-
-        grid-template-columns:
-
-        1fr 1fr;
-      }
-
-
-      .process-item {
-
-        grid-template-columns:
-
-        45px 1fr;
-      }
-
-
-      .process-info {
-
-        display: none;
-      }
-
-
-      section {
-
-        padding:
-
-        85px 7%;
-      }
-
-
-      footer {
-
-        flex-direction: column;
-      }
-
-    }
-
-  </style>
-
+</style>
 </head>
-
 
 
 <body>
 
-
-<!-- =============================
-     NAVIGATION
-============================== -->
+<!-- NAVIGATION -->
 
 <nav>
 
-  <a href="#home" class="brand">
+    <a href="#home" class="brand">
 
-    <!--
-      ЗДЕСЬ ПОТОМ ПОСТАВИМ
-      ВАШ НАСТОЯЩИЙ ЛОГОТИП
-    -->
+        <div class="logo">
+            <img src="bilbarbie-logo.jpeg" alt="BIL Barbie logo">
+        </div>
 
-    <div class="logo">
-      BB
-    </div>
+        <div class="brand-name">
+            BIL <span>BARBIE</span>
+        </div>
 
-    <div class="brand-name">
-      BIL <span>BARBIE</span>
-    </div>
-
-  </a>
+    </a>
 
 
+    <ul>
 
-  <ul>
+        <li><a href="#about">About</a></li>
 
-    <li>
-      <a href="#about">
-        About
-      </a>
-    </li>
+        <li><a href="#blocks">Blocks</a></li>
 
-    <li>
-      <a href="#work">
-        Engineering
-      </a>
-    </li>
+        <li><a href="#engineering">Engineering</a></li>
 
-    <li>
-      <a href="#portfolio">
-        Portfolio
-      </a>
-    </li>
+        <li><a href="#portfolio">Portfolio</a></li>
 
-    <li>
-      <a href="#contact">
-        Contact
-      </a>
-    </li>
+        <li><a href="#manual">Manual</a></li>
 
-  </ul>
+        <li><a href="#partners">Partners</a></li>
+
+        <li>
+            <a class="nav-contact" href="#contact">
+                Contact
+            </a>
+        </li>
+
+    </ul>
 
 </nav>
 
 
+<!-- HERO -->
 
-<!-- =============================
-     HERO
-============================== -->
+<header class="hero" id="home">
 
-<main class="hero" id="home">
-
-  <div class="hero-content">
-
-
-    <div class="tag">
-
-      Robotics Team · Since 2023
-
+    <div class="hero-watermark">
+        <img src="bilbarbie-logo.jpeg" alt="">
     </div>
 
-
-
-    <h1>
-
-      Hi,<br>
-
-      <span>
-        Barbie.
-      </span>
-
-    </h1>
-
-
-
-    <p class="hero-description">
-
-      We are <strong>BIL Barbie</strong> —
-      a robotics team where engineering,
-      programming and design come together.
-
-      We design mechanisms,
-      develop robots and turn ideas
-      into working systems.
-
-    </p>
-
-
-
-    <div class="buttons">
-
-
-      <a
-      class="button button-primary"
-      href="#portfolio">
-
-        View our portfolio ↗
-
-      </a>
-
-
-      <a
-      class="button button-secondary"
-      href="#about">
-
-        Meet the team
-
-      </a>
-
-
-    </div>
-
-  </div>
-
-</main>
-
-
-
-<!-- =============================
-     ABOUT
-============================== -->
-
-<section
-class="about"
-id="about">
-
-
-  <div class="section-label">
-
-    01 — About us
-
-  </div>
-
-
-
-  <h2 class="section-title">
-
-    Pretty serious<br>
-    about engineering.
-
-  </h2>
-
-
-
-  <div class="about-grid">
-
-
-    <div class="about-text">
-
-
-      <p>
-
-        <strong>BIL Barbie</strong>
-        was founded in 2023 by students
-        united by robotics,
-        technology and engineering.
-
-      </p>
-
-
-      <br>
-
-
-      <p>
-
-        We are not simply assembling
-        a robot from existing parts.
-
-        We develop mechanisms,
-        model components in CAD,
-        program robot behaviour,
-        build prototypes and test
-        our engineering solutions.
-
-      </p>
-
-
-      <br>
-
-
-      <p>
-
-        Each new version is based
-        on what we learned from
-        the previous one.
-
-        Our goal is to combine
-        <strong>technical precision,
-        creativity and teamwork</strong>
-        in one system.
-
-      </p>
-
-
-      <br>
-
-
-      <p>
-
-        We believe engineering
-        can be intelligent,
-        competitive —
-
-        and still have personality.
-
-      </p>
-
-
-    </div>
-
-
-
-    <div class="stats">
-
-
-      <div class="stat">
-
-        <div class="stat-number">
-          2023
+    <div class="hero-content">
+
+        <div class="tag">
+            <span class="tag-dot"></span>
+            FTC #25272 · Almaty · Since 2023
         </div>
 
-        <div class="stat-text">
-          TEAM FOUNDED
+        <h1>
+            Hi,<br>
+            <span>Barbie.</span>
+        </h1>
+
+        <div class="hero-bottom">
+
+            <p class="hero-text">
+
+                We are <strong>BIL Barbie</strong> —
+                an all-girls FTC robotics team from Almaty.
+
+                <br><br>
+
+                We combine engineering, CAD,
+                programming, outreach and design
+                to turn ideas into competition-ready robots.
+
+            </p>
+
+            <div class="buttons">
+
+                <a class="btn btn-primary" href="#blocks">
+                    Explore our blocks ↓
+                </a>
+
+                <a class="btn btn-outline" href="#portfolio">
+                    Portfolio ↗
+                </a>
+
+            </div>
+
         </div>
 
-      </div>
+    </div>
+
+</header>
 
 
+<!-- MOVING BAR -->
 
-      <div class="stat">
+<div class="marquee">
 
-        <div class="stat-number">
-          CAD
-        </div>
+    <div class="marquee-inner">
 
-        <div class="stat-text">
-          DESIGN & PROTOTYPING
-        </div>
+        FTC #25272 ✦ BIL BARBIE ✦ CAD ✦ ROBOTICS ✦
+        PROGRAMMING ✦ GIRLS IN STEM ✦ ALMATY ✦
+        BIOBUZZ ✦ PROTOTYPING ✦ OUTREACH ✦ ENGINEERING ✦
 
-      </div>
-
-
-
-      <div class="stat">
-
-        <div class="stat-number">
-          &lt;/&gt;
-        </div>
-
-        <div class="stat-text">
-          PROGRAMMING
-        </div>
-
-      </div>
-
-
-
-      <div class="stat">
-
-        <div class="stat-number">
-          ∞
-        </div>
-
-        <div class="stat-text">
-          TEST · IMPROVE · REPEAT
-        </div>
-
-      </div>
-
+        FTC #25272 ✦ BIL BARBIE ✦ CAD ✦ ROBOTICS ✦
+        PROGRAMMING ✦ GIRLS IN STEM ✦ ALMATY ✦
+        BIOBUZZ ✦ PROTOTYPING ✦ OUTREACH ✦ ENGINEERING ✦
 
     </div>
 
-  </div>
-
-</section>
+</div>
 
 
+<!-- ABOUT -->
 
-<!-- =============================
-     ENGINEERING
-============================== -->
+<section class="about" id="about">
 
-<section
-class="work"
-id="work">
+<div class="inner">
 
-
-  <div class="section-label">
-
-    02 — What we do
-
-  </div>
-
-
-
-  <h2 class="section-title">
-
-    From idea<br>
-    to robot.
-
-  </h2>
-
-
-
-  <div class="cards">
-
-
-    <div class="card">
-
-
-      <div class="card-number">
-
-        01 / DESIGN
-
-      </div>
-
-
-      <div>
-
-        <h3>
-          CAD & Engineering
-        </h3>
-
-
-        <p>
-
-          We design robot assemblies,
-          mechanisms and individual
-          components before manufacturing.
-
-          CAD helps us validate geometry,
-          movement and integration
-          before a part becomes physical.
-
-        </p>
-
-      </div>
-
-
+    <div class="label">
+        01 / About us
     </div>
 
-
-
-    <div class="card">
-
-
-      <div class="card-number">
-
-        02 / CODE
-
-      </div>
-
-
-      <div>
-
-        <h3>
-          Programming
-        </h3>
-
-
-        <p>
-
-          We develop robot control logic
-          and autonomous behaviour.
-
-          Our software is focused on
-          precision, repeatability
-          and reliable robot performance.
-
-        </p>
-
-      </div>
-
-
-    </div>
-
-
-
-    <div class="card">
-
-
-      <div class="card-number">
-
-        03 / TEST
-
-      </div>
-
-
-      <div>
-
-        <h3>
-          Iteration
-        </h3>
-
-
-        <p>
-
-          Build. Test. Analyse. Improve.
-
-          Every prototype gives us
-          information for the next
-          engineering decision.
-
-        </p>
-
-      </div>
-
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-
-<!-- =============================
-     PROCESS
-============================== -->
-
-<section class="process">
-
-
-  <div class="section-label">
-
-    03 — How we build
-
-  </div>
-
-
-
-  <h2 class="section-title">
-
-    Engineering is<br>
-    an iteration.
-
-  </h2>
-
-
-
-  <div class="process-list">
-
-
-    <div class="process-item">
-
-      <div class="process-number">
-        01
-      </div>
-
-      <div class="process-name">
-        Research
-      </div>
-
-      <div class="process-info">
-        Understand the challenge
-      </div>
-
-    </div>
-
-
-
-    <div class="process-item">
-
-      <div class="process-number">
-        02
-      </div>
-
-      <div class="process-name">
-        Design
-      </div>
-
-      <div class="process-info">
-        CAD & mechanisms
-      </div>
-
-    </div>
-
-
-
-    <div class="process-item">
-
-      <div class="process-number">
-        03
-      </div>
-
-      <div class="process-name">
-        Build
-      </div>
-
-      <div class="process-info">
-        Prototype
-      </div>
-
-    </div>
-
-
-
-    <div class="process-item">
-
-      <div class="process-number">
-        04
-      </div>
-
-      <div class="process-name">
-        Program
-      </div>
-
-      <div class="process-info">
-        Control & autonomous
-      </div>
-
-    </div>
-
-
-
-    <div class="process-item">
-
-      <div class="process-number">
-        05
-      </div>
-
-      <div class="process-name">
-        Test & improve
-      </div>
-
-      <div class="process-info">
-        Repeat
-      </div>
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-
-<!-- =============================
-     PORTFOLIO
-============================== -->
-
-<section
-class="portfolio"
-id="portfolio">
-
-
-  <div class="portfolio-content">
-
-
-    <div class="section-label">
-
-      04 — Portfolio
-
-    </div>
-
-
-
-    <h2 class="section-title">
-
-      More than<br>
-      a pretty robot.
-
+    <h2 class="title">
+        Pretty serious<br>
+        about engineering.
     </h2>
 
+    <div class="about-grid">
+
+        <div class="about-copy">
+
+            <p>
+                <strong>BIL Barbie</strong>
+                is FTC Team #25272,
+                an all-girls robotics team
+                from Almaty,
+                established in 2023.
+            </p>
+
+            <p>
+                We design mechanisms,
+                model components in CAD,
+                program autonomous and TeleOp systems,
+                manufacture prototypes
+                and continuously improve our robot
+                through testing.
+            </p>
+
+            <p>
+                Our work goes beyond simply
+                assembling a robot.
+                We collaborate,
+                document our engineering process
+                and introduce more students
+                to robotics and STEM.
+            </p>
+
+            <p>
+                Engineering is our work.
+                <strong>Personality is part of the system.</strong>
+            </p>
+
+        </div>
+
+        <div class="stats">
+
+            <div class="stat">
+                <div class="stat-big">#25272</div>
+                <div class="stat-small">FIRST Tech Challenge</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-big">2023</div>
+                <div class="stat-small">Team established</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-big">CAD</div>
+                <div class="stat-small">Engineering</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-big">&lt;/&gt;</div>
+                <div class="stat-small">Programming</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
 
 
-    <p class="portfolio-description">
+<!-- BLOCKS -->
 
-      Explore our projects,
-      engineering process,
-      prototypes, competitions
-      and the work behind BIL Barbie.
+<section class="blocks" id="blocks">
 
-    </p>
+<div class="inner">
 
+    <div class="blocks-header">
 
+        <div>
 
-    <!--
-      ВАЖНО:
-      СЮДА ВСТАВЛЯЕТСЯ CANVA
-      ССЫЛКА С ДОСТУПОМ "CAN VIEW"
-    -->
+            <div class="label">
+                02 / Blocks
+            </div>
 
-    <a
+            <h2 class="title">
+                Our journey.<br>
+                Block by block.
+            </h2>
 
-      class="button button-primary"
+        </div>
 
-      href="https://canva.link/vu8egxc53wyp2v3"
+        <div class="blocks-controls">
 
-      target="_blank"
+            <button
+                class="arrow"
+                onclick="moveBlocks(-1)"
+                aria-label="Previous block">
+                ←
+            </button>
 
-      rel="noopener noreferrer"
+            <button
+                class="arrow"
+                onclick="moveBlocks(1)"
+                aria-label="Next block">
+                →
+            </button>
 
-    >
-
-      Open portfolio ↗
-
-    </a>
-
-
-
-    <div class="view-only">
-
-      PORTFOLIO · VIEW ONLY
+        </div>
 
     </div>
 
 
-  </div>
+    <div class="slider" id="blockSlider">
+
+        <article class="block-card">
+
+            <div>
+
+                <div class="block-top">
+                    <span>2023</span>
+                    <span>The beginning</span>
+                </div>
+
+                <div class="block-number">01</div>
+
+                <h3>BIL Barbie begins.</h3>
+
+                <p>
+                    The beginning of our journey
+                    as an all-girls robotics team.
+                    From our first concepts
+                    to our first mechanisms,
+                    every iteration became part
+                    of the team's engineering story.
+                </p>
+
+            </div>
+
+            <div class="block-bottom">
+                <span>BIL BARBIE</span>
+                <span>FTC #25272</span>
+            </div>
+
+        </article>
+
+
+        <article class="block-card">
+
+            <div>
+
+                <div class="block-top">
+                    <span>Competition</span>
+                    <span>FTC</span>
+                </div>
+
+                <div class="block-number">02</div>
+
+                <h3>Competition mode.</h3>
+
+                <p>
+                    Competition is where our
+                    engineering decisions meet reality.
+                    We test the robot under pressure,
+                    identify weaknesses and return
+                    to CAD, programming and prototyping
+                    with new data.
+                </p>
+
+            </div>
+
+            <div class="block-bottom">
+                <span>BUILD</span>
+                <span>TEST</span>
+            </div>
+
+        </article>
+
+
+        <article class="block-card">
+
+            <div>
+
+                <div class="block-top">
+                    <span>Engineering</span>
+                    <span>CAD</span>
+                </div>
+
+                <div class="block-number">03</div>
+
+                <h3>Design before build.</h3>
+
+                <p>
+                    We use CAD to develop
+                    mechanisms before manufacturing.
+                    Geometry, clearances,
+                    subsystem placement and
+                    component integration
+                    are considered before
+                    the physical build begins.
+                </p>
+
+            </div>
+
+            <div class="block-bottom">
+                <span>DESIGN</span>
+                <span>ITERATE</span>
+            </div>
+
+        </article>
+
+
+        <article class="block-card">
+
+            <div>
+
+                <div class="block-top">
+                    <span>Software</span>
+                    <span>Programming</span>
+                </div>
+
+                <div class="block-number">04</div>
+
+                <h3>Code the behaviour.</h3>
+
+                <p>
+                    Mechanical systems are only
+                    part of the robot.
+                    We develop software for
+                    driver control,
+                    autonomous behaviour
+                    and repeatable robot actions.
+                </p>
+
+            </div>
+
+            <div class="block-bottom">
+                <span>AUTO</span>
+                <span>TELEOP</span>
+            </div>
+
+        </article>
+
+
+        <article class="block-card">
+
+            <div>
+
+                <div class="block-top">
+                    <span>Community</span>
+                    <span>Outreach</span>
+                </div>
+
+                <div class="block-number">05</div>
+
+                <h3>Beyond the robot.</h3>
+
+                <p>
+                    BIL Barbie is also about
+                    sharing STEM and robotics.
+                    We connect engineering,
+                    teamwork and community
+                    while helping more girls
+                    see themselves in technology.
+                </p>
+
+            </div>
+
+            <div class="block-bottom">
+                <span>GIRLS IN STEM</span>
+                <span>COMMUNITY</span>
+            </div>
+
+        </article>
+
+    </div>
+
+</div>
 
 </section>
 
 
+<!-- ENGINEERING -->
 
-<!-- =============================
-     CONTACT
-============================== -->
+<section class="engineering" id="engineering">
 
-<section
-class="contact"
-id="contact">
+<div class="inner">
 
+    <div class="label">
+        03 / Engineering
+    </div>
 
-  <div class="section-label">
+    <h2 class="title">
+        From sketch<br>
+        to robot.
+    </h2>
 
-    05 — Contact
+    <div class="cards">
 
-  </div>
+        <article class="card">
 
+            <div class="card-num">
+                01 / MECHANICAL
+            </div>
 
+            <div>
 
-  <h2 class="section-title">
+                <h3>CAD & Engineering</h3>
 
-    Let's build<br>
-    something.
+                <p>
+                    We model mechanisms before manufacturing,
+                    analyse subsystem integration
+                    and use CAD to make engineering decisions
+                    before parts reach the robot.
+                </p>
 
-  </h2>
+            </div>
 
-
-
-  <p class="contact-intro">
-
-    Follow BIL Barbie,
-    see what we're building
-    and contact our team.
-
-  </p>
-
-
-
-  <div class="contact-grid">
-
+        </article>
 
 
-    <!-- INSTAGRAM -->
+        <article class="card">
 
-    <a
+            <div class="card-num">
+                02 / SOFTWARE
+            </div>
 
-      class="contact-item instagram"
+            <div>
 
-      href="https://www.instagram.com/bil_barbie/"
+                <h3>Programming</h3>
 
-      target="_blank"
+                <p>
+                    Autonomous routines,
+                    TeleOp control,
+                    sensors and repeatable
+                    robot behaviour are developed
+                    through continuous testing
+                    and refinement.
+                </p>
 
-      rel="noopener noreferrer"
+            </div>
 
-    >
-
-
-      <small>
-        Instagram
-      </small>
-
-
-      <div class="contact-big">
-
-        @bil_barbie ↗
-
-      </div>
+        </article>
 
 
-    </a>
+        <article class="card">
 
+            <div class="card-num">
+                03 / ITERATION
+            </div>
 
+            <div>
 
-    <!-- PHONE -->
+                <h3>Build. Test. Repeat.</h3>
 
-    <a
+                <p>
+                    Testing tells us
+                    what needs to change.
+                    Every failure becomes data
+                    for the next mechanical
+                    or software iteration.
+                </p>
 
-      class="contact-item phone"
+            </div>
 
-      href="tel:+77027582726"
+        </article>
 
-    >
+    </div>
 
-
-      <small>
-
-        Phone
-
-      </small>
-
-
-      <div class="contact-big">
-
-        +7 702 758 2726
-
-      </div>
-
-
-    </a>
-
-
-  </div>
+</div>
 
 </section>
 
 
+<!-- PORTFOLIO -->
 
-<!-- =============================
-     FOOTER
-============================== -->
+<section class="portfolio" id="portfolio">
+
+<div class="portfolio-content">
+
+    <div class="label">
+        04 / Engineering Portfolio
+    </div>
+
+    <h2 class="title">
+        More than<br>
+        a pretty robot.
+    </h2>
+
+    <p>
+        Our engineering portfolio documents
+        the work behind BIL Barbie:
+        design decisions, CAD, programming,
+        prototyping, testing, outreach
+        and the development of our robot.
+    </p>
+
+    <!-- OPENS portfolio.html -->
+    <a
+        href="portfolio.html"
+        class="portfolio-btn">
+        OPEN ENGINEERING PORTFOLIO ↗
+    </a>
+
+    <div class="portfolio-data">
+
+        <div class="portfolio-stat">
+            <strong>CAD</strong>
+            <span>Design</span>
+        </div>
+
+        <div class="portfolio-stat">
+            <strong>&lt;/&gt;</strong>
+            <span>Programming</span>
+        </div>
+
+        <div class="portfolio-stat">
+            <strong>FTC</strong>
+            <span>Engineering</span>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- MANUAL -->
+
+<section class="manual" id="manual">
+
+<div class="inner">
+
+    <div class="label">
+        05 / Competition Manual
+    </div>
+
+    <h2 class="title">
+        BIOBUZZ<br>
+        2026–2027.
+    </h2>
+
+    <p class="manual-intro">
+        FIRST Tech Challenge
+        2026–2027 Competition Manual.
+        Choose your language
+        and open the complete manual.
+    </p>
+
+
+    <div class="manual-cards">
+
+        <!-- KAZAKH -->
+
+        <a
+            class="manual-card manual-kz"
+            href="manual-kz.html">
+
+            <div>
+
+                <div class="manual-language">
+                    Қазақша
+                </div>
+
+                <div class="manual-icon">
+                    KZ
+                </div>
+
+                <h3>
+                    Жарыстар жөніндегі
+                    нұсқаулық
+                </h3>
+
+            </div>
+
+            <div class="manual-bottom">
+
+                <span>BIOBUZZ 2026–2027</span>
+
+                <span>АШУ ↗</span>
+
+            </div>
+
+        </a>
+
+
+        <!-- RUSSIAN -->
+
+        <a
+            class="manual-card manual-ru"
+            href="manual-ru.html">
+
+            <div>
+
+                <div class="manual-language">
+                    Русский
+                </div>
+
+                <div class="manual-icon">
+                    RU
+                </div>
+
+                <h3>
+                    Руководство
+                    по соревнованиям
+                </h3>
+
+            </div>
+
+            <div class="manual-bottom">
+
+                <span>BIOBUZZ 2026–2027</span>
+
+                <span>ОТКРЫТЬ ↗</span>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- PARTNERS -->
+
+<section class="partners" id="partners">
+
+<div class="inner">
+
+    <div class="label">
+        06 / Sponsors & Partnerships
+    </div>
+
+    <h2 class="title">
+        Built<br>
+        together.
+    </h2>
+
+    <p class="partner-intro">
+        Our community extends beyond
+        the competition field.
+        We value partnerships that
+        support technology,
+        leadership, education
+        and opportunities for girls
+        and women.
+    </p>
+
+
+    <div class="partner-grid">
+
+        <!-- WOMEN IN TECH -->
+
+        <article class="partner-card wit">
+
+            <div class="partner-logo">
+                <img
+                    src="womenintech-logo.jpeg"
+                    alt="Women in Tech Kazakhstan">
+            </div>
+
+            <div class="partner-type">
+                Sponsor & Partner
+            </div>
+
+            <h3>
+                Women in Tech<br>
+                Kazakhstan
+            </h3>
+
+            <p>
+                Women in Tech Kazakhstan
+                connects women with technology,
+                innovation and professional development.
+                Their community helps create
+                more opportunities for women
+                to participate and grow
+                in the technology sector.
+            </p>
+
+            <div class="partner-links">
+
+                <a
+                    class="partner-link"
+                    href="https://www.instagram.com/womenintech.kz/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    @womenintech.kz ↗
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- GIRLS FOR GIRLS -->
+
+        <article class="partner-card g4g">
+
+            <div class="partner-logo">
+
+                <img
+                    src="girls4girls-logo.jpeg"
+                    alt="Girls for Girls Kazakhstan">
+
+            </div>
+
+            <div class="partner-type">
+                Partner
+            </div>
+
+            <h3>
+                Girls for Girls<br>
+                Kazakhstan
+            </h3>
+
+            <p>
+                Girls for Girls Kazakhstan
+                focuses on empowering young women
+                through leadership,
+                mentorship, education
+                and community.
+
+                Their work helps girls
+                build confidence,
+                skills and networks
+                for the future.
+            </p>
+
+            <div class="partner-links">
+
+                <a
+                    class="partner-link"
+                    href="https://www.instagram.com/girls4girlskazakhstan/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    @girls4girlskazakhstan ↗
+
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<div class="inner">
+
+    <div class="label">
+        07 / Contact
+    </div>
+
+    <h2 class="title">
+        Let's build<br>
+        something smart.
+    </h2>
+
+    <p class="contact-text">
+        Follow our journey,
+        see what we're building
+        and connect with BIL Barbie.
+    </p>
+
+
+    <div class="contacts">
+
+        <a
+            class="contact-card instagram"
+            href="https://www.instagram.com/bil_barbie/"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            <div class="contact-label">
+                Instagram
+            </div>
+
+            <div class="contact-value">
+                @bil_barbie ↗
+            </div>
+
+        </a>
+
+
+        <a
+            class="contact-card phone"
+            href="tel:+77027582726">
+
+            <div class="contact-label">
+                Contact
+            </div>
+
+            <div class="contact-value">
+                +7 702 758 2726
+            </div>
+
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
 
 <footer>
 
+    <span>
+        © 2026 BIL BARBIE
+    </span>
 
-  <span>
+    <span>
+        FTC #25272 · ALMATY
+    </span>
 
-    © 2026 BIL BARBIE
-
-  </span>
-
-
-  <span>
-
-    ROBOTICS · ENGINEERING
-
-  </span>
-
-
-  <span>
-
-    ENGINEERED WITH PERSONALITY.
-
-  </span>
-
+    <span>
+        ENGINEERED WITH PERSONALITY.
+    </span>
 
 </footer>
 
 
-</body>
+<script>
 
+function moveBlocks(direction){
+
+    const slider =
+        document.getElementById("blockSlider");
+
+    const card =
+        slider.querySelector(".block-card");
+
+    if(!card) return;
+
+    const distance =
+        card.offsetWidth + 18;
+
+    slider.scrollBy({
+        left:direction * distance,
+        behavior:"smooth"
+    });
+
+}
+
+</script>
+
+</body>
 </html>

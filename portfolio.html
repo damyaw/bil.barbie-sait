@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BIL Barbie | Engineering Portfolio</title>
+
+<style>
+
+:root{
+    --cream:#FFF7E6;
+    --cream2:#FFF1CF;
+    --pink:#EFBFC2;
+    --pink2:#F4C9D6;
+    --dusty:#D5999D;
+    --wine:#540209;
+    --red:#8B0000;
+    --green:#132A13;
+    --olive:#45462A;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:-apple-system,BlinkMacSystemFont,
+    "Segoe UI",Arial,sans-serif;
+
+    background:var(--cream);
+    color:var(--green);
+
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+}
+
+
+/* NAV */
+
+nav{
+    position:fixed;
+
+    top:18px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:calc(100% - 36px);
+    max-width:1300px;
+
+    padding:10px 14px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:rgba(255,247,230,.88);
+
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+
+    border:1px solid rgba(84,2,9,.1);
+    border-radius:100px;
+
+    z-index:1000;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    text-decoration:none;
+
+    font-size:14px;
+    font-weight:850;
+}
+
+.brand img{
+    width:44px;
+    height:44px;
+
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.brand span{
+    color:var(--dusty);
+}
+
+.back{
+    padding:12px 19px;
+
+    background:var(--green);
+    color:white;
+
+    border-radius:100px;
+
+    text-decoration:none;
+
+    font-size:12px;
+    font-weight:800;
+}
+
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+
+    padding:170px 8% 90px;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+
+    width:750px;
+    height:750px;
+
+    right:-160px;
+    top:20px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(239,191,194,.95),
+            rgba(244,201,214,.4) 50%,
+            transparent 72%
+        );
+}
+
+.hero-logo{
+    position:absolute;
+
+    width:min(47vw,650px);
+
+    right:1%;
+    top:50%;
+
+    transform:translateY(-43%) rotate(4deg);
+
+    opacity:.11;
+}
+
+.hero-logo img{
+    width:100%;
+
+    border-radius:50%;
+}
+
+.hero-inner{
+    width:100%;
+    max-width:1200px;
+
+    margin:auto;
+
+    position:relative;
+    z-index:2;
+}
+
+.label{
+    font-size:11px;
+    font-weight:850;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    color:var(--dusty);
+}
+
+h1{
+    margin-top:30px;
+
+    max-width:1000px;
+
+    font-size:clamp(70px,12vw,155px);
+
+    line-height:.8;
+
+    letter-spacing:-9px;
+
+    color:var(--wine);
+}
+
+.hero-text{
+    max-width:670px;
+
+    margin-top:50px;
+
+    font-size:18px;
+    line-height:1.75;
+
+    color:var(--olive);
+}
+
+.hero-text strong{
+    color:var(--green);
+}
+
+
+/* STATS */
+
+.stats{
+    padding:30px 8% 110px;
+}
+
+.stats-inner{
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:12px;
+}
+
+.stat{
+    min-height:180px;
+
+    padding:28px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    border-radius:28px;
+}
+
+.stat:nth-child(1){
+    background:var(--wine);
+    color:white;
+}
+
+.stat:nth-child(2){
+    background:var(--pink);
+    color:var(--wine);
+}
+
+.stat:nth-child(3){
+    background:var(--green);
+    color:white;
+}
+
+.stat:nth-child(4){
+    background:var(--pink2);
+    color:var(--wine);
+}
+
+.stat strong{
+    font-size:39px;
+
+    letter-spacing:-2px;
+}
+
+.stat span{
+    font-size:10px;
+
+    font-weight:850;
+
+    letter-spacing:1.5px;
+
+    text-transform:uppercase;
+
+    opacity:.7;
+}
+
+
+/* SECTIONS */
+
+.section{
+    padding:120px 8%;
+}
+
+.inner{
+    max-width:1200px;
+    margin:auto;
+}
+
+.title{
+    margin-top:15px;
+
+    max-width:950px;
+
+    font-size:clamp(48px,7vw,90px);
+
+    line-height:.92;
+
+    letter-spacing:-5px;
+
+    color:var(--wine);
+}
+
+.lead{
+    max-width:720px;
+
+    margin-top:35px;
+
+    font-size:17px;
+    line-height:1.8;
+
+    color:var(--olive);
+}
+
+
+/* OVERVIEW */
+
+.overview{
+    background:var(--green);
+    color:white;
+}
+
+.overview .title{
+    color:var(--cream);
+}
+
+.overview .lead{
+    color:#F5EBD3;
+}
+
+.overview .label{
+    color:var(--pink);
+}
+
+.overview-grid{
+    margin-top:60px;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+}
+
+.overview-card{
+    min-height:260px;
+
+    padding:30px;
+
+    background:rgba(255,255,255,.07);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    border-radius:28px;
+}
+
+.overview-card span{
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    color:var(--pink);
+}
+
+.overview-card h3{
+    margin-top:50px;
+
+    font-size:32px;
+
+    letter-spacing:-1.5px;
+}
+
+.overview-card p{
+    margin-top:15px;
+
+    line-height:1.7;
+
+    color:#F5EBD3;
+}
+
+
+/* ENGINEERING */
+
+.engineering{
+    background:#FFF7EC;
+}
+
+.eng-grid{
+    margin-top:60px;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+}
+
+.eng-card{
+    min-height:390px;
+
+    padding:32px;
+
+    border-radius:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+}
+
+.eng-card:nth-child(1){
+    background:var(--pink);
+    color:var(--wine);
+}
+
+.eng-card:nth-child(2){
+    background:var(--wine);
+    color:white;
+}
+
+.eng-card:nth-child(3){
+    background:var(--olive);
+    color:white;
+}
+
+.eng-card:nth-child(4){
+    background:var(--pink2);
+    color:var(--wine);
+}
+
+.eng-num{
+    font-size:11px;
+
+    font-weight:850;
+
+    letter-spacing:2px;
+
+    opacity:.65;
+}
+
+.eng-card h3{
+    font-size:38px;
+
+    line-height:1;
+
+    letter-spacing:-2px;
+}
+
+.eng-card p{
+    margin-top:15px;
+
+    max-width:480px;
+
+    line-height:1.7;
+
+    opacity:.8;
+}
+
+
+/* INTAKE */
+
+.data{
+    background:var(--pink2);
+}
+
+.data-grid{
+    margin-top:60px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:18px;
+}
+
+.data-box{
+    padding:35px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.45);
+}
+
+.data-box h3{
+    font-size:32px;
+
+    color:var(--wine);
+}
+
+.big-data{
+    margin:40px 0 10px;
+
+    font-size:80px;
+
+    line-height:1;
+
+    font-weight:850;
+
+    letter-spacing:-5px;
+
+    color:var(--wine);
+}
+
+.data-box p{
+    line-height:1.7;
+
+    color:var(--olive);
+}
+
+
+/* OUTREACH */
+
+.outreach{
+    background:var(--wine);
+    color:white;
+}
+
+.outreach .title{
+    color:var(--cream);
+}
+
+.outreach .label{
+    color:var(--pink);
+}
+
+.outreach .lead{
+    color:var(--pink);
+}
+
+.outreach-grid{
+    margin-top:60px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:15px;
+}
+
+.outreach-card{
+    padding:30px;
+
+    min-height:280px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:28px;
+}
+
+.outreach-card strong{
+    display:block;
+
+    font-size:45px;
+
+    color:var(--pink);
+}
+
+.outreach-card h3{
+    margin-top:40px;
+
+    font-size:24px;
+}
+
+.outreach-card p{
+    margin-top:13px;
+
+    color:#F5EBD3;
+
+    line-height:1.65;
+
+    font-size:14px;
+}
+
+
+/* LESSONS */
+
+.lessons{
+    background:var(--cream);
+}
+
+.lesson-grid{
+    margin-top:60px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:15px;
+}
+
+.lesson{
+    min-height:250px;
+
+    padding:30px;
+
+    border:1px solid rgba(84,2,9,.12);
+
+    border-radius:28px;
+}
+
+.lesson span{
+    color:var(--dusty);
+
+    font-size:11px;
+
+    font-weight:900;
+}
+
+.lesson h3{
+    margin-top:70px;
+
+    font-size:28px;
+
+    color:var(--wine);
+
+    letter-spacing:-1px;
+}
+
+
+/* PDF */
+
+.pdf{
+    padding:120px 8%;
+
+    text-align:center;
+
+    background:var(--pink);
+}
+
+.pdf-inner{
+    max-width:800px;
+
+    margin:auto;
+}
+
+.pdf h2{
+    font-size:clamp(50px,8vw,100px);
+
+    line-height:.9;
+
+    letter-spacing:-6px;
+
+    color:var(--wine);
+}
+
+.pdf p{
+    max-width:600px;
+
+    margin:30px auto;
+
+    line-height:1.7;
+
+    color:var(--olive);
+}
+
+.pdf-btn{
+    display:inline-block;
+
+    padding:16px 25px;
+
+    background:var(--wine);
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:100px;
+
+    font-size:12px;
+
+    font-weight:850;
+}
+
+
+/* FOOTER */
+
+footer{
+    padding:30px 8%;
+
+    background:#2A1616;
+    color:var(--pink);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    font-size:10px;
+
+    letter-spacing:1.5px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .stats-inner,
+    .overview-grid,
+    .eng-grid,
+    .data-grid,
+    .outreach-grid,
+    .lesson-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-logo{
+        width:90vw;
+
+        right:-45%;
+
+        opacity:.07;
+    }
+
+    h1{
+        letter-spacing:-5px;
+    }
+
+    .title{
+        letter-spacing:-3px;
+    }
+
+    footer{
+        flex-direction:column;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+    <a href="index.html" class="brand">
+
+        <img
+            src="bilbarbie-logo.jpeg"
+            alt="BIL Barbie">
+
+        BIL <span>BARBIE</span>
+
+    </a>
+
+
+    <a href="index.html#portfolio" class="back">
+        ← Back to site
+    </a>
+
+</nav>
+
+
+
+<header class="hero">
+
+
+    <div class="hero-logo">
+
+        <img
+            src="bilbarbie-logo.jpeg"
+            alt="">
+
+    </div>
+
+
+    <div class="hero-inner">
+
+
+        <div class="label">
+            FTC #25272 / ENGINEERING PORTFOLIO
+        </div>
+
+
+        <h1>
+
+            Think.<br>
+            Design.<br>
+            Build.
+
+        </h1>
+
+
+        <p class="hero-text">
+
+            We are <strong>BIL Barbie</strong>,
+            FTC Team #25272 from Almaty.
+
+            Established in 2023,
+            we are an all-girls team
+            combining engineering,
+            CAD, programming,
+            outreach and design.
+
+        </p>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- STATS -->
+
+<section class="stats">
+
+<div class="stats-inner">
+
+
+    <div class="stat">
+
+        <strong>920+</strong>
+
+        <span>Engineering hours</span>
+
+    </div>
+
+
+    <div class="stat">
+
+        <strong>20+</strong>
+
+        <span>Design iterations</span>
+
+    </div>
+
+
+    <div class="stat">
+
+        <strong>200+</strong>
+
+        <span>Students reached</span>
+
+    </div>
+
+
+    <div class="stat">
+
+        <strong>15+</strong>
+
+        <span>FTC collaborations</span>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- TEAM OVERVIEW -->
+
+<section class="section overview">
+
+<div class="inner">
+
+
+    <div class="label">
+        01 / TEAM OVERVIEW
+    </div>
+
+
+    <h2 class="title">
+
+        Engineering<br>
+        with personality.
+
+    </h2>
+
+
+    <p class="lead">
+
+        Our engineering process combines
+        functionality, reliability and aesthetics.
+
+        The robot is designed around cycle-time
+        efficiency, stability and maintainability,
+        while our team works to expand opportunities
+        for girls in STEM.
+
+    </p>
+
+
+
+    <div class="overview-grid">
+
+
+        <div class="overview-card">
+
+            <span>CONNECT</span>
+
+            <h3>Professional Community</h3>
+
+            <p>
+
+                We exchanged programming,
+                CAD and outreach practices
+                with more than 15 FTC teams
+                and worked with STEM experts
+                to improve our engineering workflow.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="overview-card">
+
+            <span>DESIGN</span>
+
+            <h3>Functionality & Aesthetics</h3>
+
+            <p>
+
+                Our robot focuses on efficient cycle time,
+                a low center of gravity,
+                accessible electronics
+                and durable components.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="overview-card">
+
+            <span>THINK</span>
+
+            <h3>Engineering Process</h3>
+
+            <p>
+
+                We document prototype failures,
+                subsequent fixes,
+                CAD decisions
+                and performance improvements.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="overview-card">
+
+            <span>REACH</span>
+
+            <h3>STEM Advocacy</h3>
+
+            <p>
+
+                BIL Barbie supports new FTC and FLL teams
+                and introduces more girls
+                to robotics and engineering.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ENGINEERING -->
+
+<section class="section engineering">
+
+<div class="inner">
+
+
+    <div class="label">
+        02 / ROBOT DEVELOPMENT
+    </div>
+
+
+    <h2 class="title">
+
+        CAD-driven<br>
+        development.
+
+    </h2>
+
+
+    <p class="lead">
+
+        Our goal was to create a compact robot
+        capable of collecting, transporting
+        and scoring game elements while maintaining
+        maneuverability and reliability.
+
+    </p>
+
+
+
+    <div class="eng-grid">
+
+
+        <article class="eng-card">
+
+            <div class="eng-num">
+                01 / DRIVETRAIN
+            </div>
+
+            <div>
+
+                <h3>
+                    Mecanum Drivetrain
+                </h3>
+
+                <p>
+
+                    The robot architecture uses
+                    a mecanum drivetrain to support
+                    maneuverability and precise movement
+                    around the field.
+
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <article class="eng-card">
+
+            <div class="eng-num">
+                02 / INTAKE
+            </div>
+
+            <div>
+
+                <h3>
+                    Active Intake
+                </h3>
+
+                <p>
+
+                    Multiple intake iterations were tested.
+                    Alignment, roller geometry and artifact
+                    control became key factors in improving
+                    consistency.
+
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <article class="eng-card">
+
+            <div class="eng-num">
+                03 / TRANSFER
+            </div>
+
+            <div>
+
+                <h3>
+                    Transfer Mechanism
+                </h3>
+
+                <p>
+
+                    The transfer system was developed
+                    around a compact internal layout
+                    and reliable movement of artifacts
+                    between subsystems.
+
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <article class="eng-card">
+
+            <div class="eng-num">
+                04 / SHOOTER
+            </div>
+
+            <div>
+
+                <h3>
+                    High-Speed Shooter
+                </h3>
+
+                <p>
+
+                    Shooter development included
+                    mathematical modelling,
+                    testing and iterative adjustment
+                    to improve consistency.
+
+                </p>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- DATA / INTAKE -->
+
+<section class="section data">
+
+<div class="inner">
+
+
+    <div class="label">
+        03 / TESTING & ITERATION
+    </div>
+
+
+    <h2 class="title">
+
+        Data before<br>
+        assumptions.
+
+    </h2>
+
+
+    <div class="data-grid">
+
+
+        <div class="data-box">
+
+            <h3>Intake development</h3>
+
+            <div class="big-data">
+                85%
+            </div>
+
+            <p>
+                The final intake design reached
+                an 85% success rate after multiple
+                prototype iterations.
+            </p>
+
+        </div>
+
+
+
+        <div class="data-box">
+
+            <h3>Escape reduction</h3>
+
+            <div class="big-data">
+                50%
+            </div>
+
+            <p>
+                Changes to intake geometry,
+                guide panels and compliant wheels
+                reduced the escape rate by 50%.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- OUTREACH -->
+
+<section class="section outreach">
+
+<div class="inner">
+
+
+    <div class="label">
+        04 / COMMUNITY & OUTREACH
+    </div>
+
+
+    <h2 class="title">
+
+        Beyond<br>
+        the robot.
+
+    </h2>
+
+
+    <p class="lead">
+
+        Our engineering work extends
+        into mentorship,
+        education and collaboration.
+
+    </p>
+
+
+
+    <div class="outreach-grid">
+
+
+        <div class="outreach-card">
+
+            <strong>200+</strong>
+
+            <h3>Students reached</h3>
+
+            <p>
+
+                Students were reached through
+                local workshops,
+                STEM activities and outreach.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="outreach-card">
+
+            <strong>15+</strong>
+
+            <h3>FTC teams</h3>
+
+            <p>
+
+                Technical collaboration included
+                programming, CAD,
+                mechanical design
+                and outreach practices.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="outreach-card">
+
+            <strong>2</strong>
+
+            <h3>New teams launched</h3>
+
+            <p>
+
+                Our outreach supported
+                the launch of a new FTC team
+                and a new FLL team.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- LESSONS -->
+
+<section class="section lessons">
+
+<div class="inner">
+
+
+    <div class="label">
+        05 / LESSONS LEARNED
+    </div>
+
+
+    <h2 class="title">
+
+        Failure is<br>
+        engineering data.
+
+    </h2>
+
+
+    <p class="lead">
+
+        Throughout the season,
+        we learned that successful engineering
+        is not about building the most complicated robot.
+
+        It is about creating a system
+        that is reliable,
+        maintainable
+        and effective under competition conditions.
+
+    </p>
+
+
+
+    <div class="lesson-grid">
+
+
+        <div class="lesson">
+
+            <span>01</span>
+
+            <h3>
+                Accurate measurements matter.
+            </h3>
+
+        </div>
+
+
+        <div class="lesson">
+
+            <span>02</span>
+
+            <h3>
+                Reliability over complexity.
+            </h3>
+
+        </div>
+
+
+        <div class="lesson">
+
+            <span>03</span>
+
+            <h3>
+                Testing drives improvement.
+            </h3>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ORIGINAL PDF -->
+
+<section class="pdf">
+
+<div class="pdf-inner">
+
+
+    <h2>
+        Want the<br>
+        full portfolio?
+    </h2>
+
+
+    <p>
+
+        This web page presents the main
+        engineering story of BIL Barbie.
+
+        The original portfolio contains
+        the complete documentation,
+        detailed development process
+        and additional team material.
+
+    </p>
+
+
+    <a
+        href="./portfolio.pdf"
+        127.0.0.1:5500/portfolio.pdf
+        target="_blank"
+        rel="noopener noreferrer"
+        class="pdf-btn">
+
+        OPEN ORIGINAL PDF ↗
+
+    </a>
+
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+    <span>
+        © 2026 BIL BARBIE
+    </span>
+
+    <span>
+        FTC #25272 · ALMATY
+    </span>
+
+    <span>
+        ENGINEERED WITH PERSONALITY.
+    </span>
+
+</footer>
+
+
+</body>
+</html>
